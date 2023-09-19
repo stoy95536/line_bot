@@ -26,7 +26,7 @@ def callback():
 def handle_message(event): # event.message.text 使用者輸入內容
     
     if event.message.text == '查詢':
-        message = TextSendMessage(text=f"要問什麼問題呢？時間{datetime.datetime.now()}") # bot return the Message to User
+        message = TextSendMessage(text=f"要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message) 
 
 import os
