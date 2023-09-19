@@ -19,15 +19,17 @@ handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 @app.route("/callback", methods=['POST'])
 def callback():
-    signature = request.headers['X-Line-Signature']
+    # 获取请求中的 JSON 数据
     body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
+    signature = request.headers['X-Line-Signature']
+
+    # 验证请求是否来自 Line 服务器
     try:
-        handler.handle(body, signature)
+        line_bot_api.validate_signature(body, signature)
     except InvalidSignatureError:
         abort(400)
-    
 
+    # 处理消息事件
     events = line_bot_api.parse_events(body)
     for event in events:
         if event.type == 'message':
@@ -35,8 +37,27 @@ def callback():
             message = TextSendMessage(text=event.message.text)
             line_bot_api.reply_message(event.reply_token, message)
 
-
     return 'OK'
+
+# def callback():
+#     signature = request.headers['X-Line-Signature']
+#     body = request.get_data(as_text=True)
+#     app.logger.info("Request body: " + body)
+#     try:
+#         handler.handle(body, signature)
+#     except InvalidSignatureError:
+#         abort(400)
+    
+
+#     events = line_bot_api.parse_events(body)
+#     for event in events:
+#         if event.type == 'message':
+#             # 回复收到的消息
+#             message = TextSendMessage(text=event.message.text)
+#             line_bot_api.reply_message(event.reply_token, message)
+
+
+#     return 'OK'
 
 
 # @handler.add(MessageEvent, message=TextMessage)
