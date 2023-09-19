@@ -3,6 +3,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import os
+import time
 
 app = Flask(__name__)
 
@@ -22,11 +23,11 @@ def callback():
     return 'OK'
 
 @handler.add(MessageEvent, message=TextMessage)
-def handle_message(event): # event.message.text 請問要查詢什麼
+def handle_message(event): # event.message.text 使用者輸入內容
     
     if event.message.text == '查詢':
-        message = TextSendMessage(text="要問什麼問題呢？")
-        line_bot_api.reply_message(event.reply_token, message)
+        message = TextSendMessage(text=f"要問什麼問題呢？時間{time.time()}") # bot return the Message to User
+        line_bot_api.reply_message(event.reply_token, message) 
 
 import os
 if __name__ == "__main__":
