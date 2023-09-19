@@ -22,10 +22,10 @@ def callback():
     return 'OK'
 
 @handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
+def handle_message(event): # event.message.text 請問要查詢什麼
     
-    if event.message.text == '123':
-        message = TextSendMessage(text=event.message.text)
+    if event.message.text == '查詢':
+        message = TextSendMessage(text="要問什麼問題呢？")
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
