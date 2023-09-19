@@ -4,6 +4,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import os
 import datetime
+import openai
 
 app = Flask(__name__)
 
