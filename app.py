@@ -26,28 +26,39 @@ def callback():
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
+    
+
+    events = line_bot_api.parse_events(body)
+    for event in events:
+        if event.type == 'message':
+            # 回复收到的消息
+            message = TextSendMessage(text=event.message.text)
+            line_bot_api.reply_message(event.reply_token, message)
+
+
     return 'OK'
 
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event): # event.message.text 使用者輸入內容
+
+# @handler.add(MessageEvent, message=TextMessage)
+# def handle_message(event): # event.message.text 使用者輸入內容
     
-    if event.message.text == '查詢':
-        message = TextSendMessage(text=f"要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message) 
+#     if event.message.text == '查詢':
+#         message = TextSendMessage(text=f"要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
+#         line_bot_api.reply_message(event.reply_token, message) 
         
-    if event.message.text == '你好':
-        message = TextSendMessage(text=f"幹你娘\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message) 
+#     if event.message.text == '你好':
+#         message = TextSendMessage(text=f"幹你娘\n時間{datetime.datetime.now()}") # bot return the Message to User
+#         line_bot_api.reply_message(event.reply_token, message) 
     
-    if event.message.text == '找地圖':
-        message = TextSendMessage(text=f"請問要找哪裡呢\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message) 
-        while 1:
-            location = event.message.text
-            if location != "":
-                message = TextSendMessage(text=f"https://www.google.com/maps/search/?api=1&query={location}\n時間{datetime.datetime.now()}") # bot return the Message to User
-                line_bot_api.reply_message(event.reply_token, message)
-                break 
+#     if event.message.text == '找地圖':
+#         message = TextSendMessage(text=f"請問要找哪裡呢\n時間{datetime.datetime.now()}") # bot return the Message to User
+#         line_bot_api.reply_message(event.reply_token, message) 
+#         while 1:
+#             location = event.message.text
+#             if location != "":
+#                 message = TextSendMessage(text=f"https://www.google.com/maps/search/?api=1&query={location}\n時間{datetime.datetime.now()}") # bot return the Message to User
+#                 line_bot_api.reply_message(event.reply_token, message)
+#                 break 
 
 
 import os
