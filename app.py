@@ -64,8 +64,8 @@ def handle_message(event): # event.message.text 使用者輸入內容
     #             break 
 
 
-    if event.message.text == 'fuck you':
-        message = TextSendMessage(text=f"幹你娘雞掰\n時間{datetime.datetime.now()}") # bot return the Message to User
+    if event.message.text == 'test':
+        message = TextSendMessage(text=f"test\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
 
 import os
