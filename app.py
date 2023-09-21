@@ -31,7 +31,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     # user_id = event.source.userId
     # profile = line_bot_api.get_profile(event.source.userId)
-    message = TextSendMessage(text=f"{type(event)} \n{event.source.userId} ")
+    message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} ")
     line_bot_api.reply_message(event.reply_token, message)
     
     if event.message.text == '查詢':
