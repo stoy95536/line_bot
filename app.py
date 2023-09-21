@@ -29,8 +29,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
-    user_id = event.source.userId
-    profile = line_bot_api.get_profile(f'{user_id}')
+    # user_id = event.source.userId
+    profile = line_bot_api.get_profile(event.source.userId)
+ 
     
     if event.message.text == '查詢':
         message = TextSendMessage(text=f"{profile}您好，要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
