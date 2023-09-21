@@ -16,6 +16,8 @@ handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 @app.route("/callback", methods=['POST'])
 def callback():
+    global profile
+    profile = line_bot_api.get_profile('<user_id>')
     signature = request.headers['X-Line-Signature']
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
@@ -29,8 +31,12 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
+    global profile
+    
+    
+    
     if event.message.text == '查詢':
-        message = TextSendMessage(text=f"要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
+        message = TextSendMessage(text=f"{profile}您好，要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message) 
         
     if event.message.text == '你好':
