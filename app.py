@@ -34,8 +34,11 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     
     User_name = line_bot_api.get_profile(event.source.user_id)
-    message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} ")
+    
+    message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{User_name.displayName} ")
     line_bot_api.reply_message(event.reply_token, message)
+    
+    
     
     if event.message.text == '查詢':
         message = TextSendMessage(text=f"{profile}您好，要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
