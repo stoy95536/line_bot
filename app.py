@@ -35,7 +35,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     User_name = line_bot_api.get_profile(event.source.user_id)
     
-    message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{type(User_name)} ")
+    message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{type(User_name.display_name)} ")
     line_bot_api.reply_message(event.reply_token, message)
     
     
