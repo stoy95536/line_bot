@@ -36,7 +36,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     # profile = line_bot_api.get_profile(event.source.userId)
     
     
-    # User_name = line_bot_api.get_profile(event.source.user_id)
+    User_name = line_bot_api.get_profile(event.source.user_id)
     
     # usersdata = {'username': f'{User_name.display_name}',
     #              'user_id': f'{event.source.user_id}',
