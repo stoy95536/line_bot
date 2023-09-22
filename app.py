@@ -49,13 +49,13 @@ def handle_message(event): # event.message.text 使用者輸入內容
     # usersdata_pd.to_csv('user_name.csv')
     
     
-    message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{User_name.display_name} ")
-    line_bot_api.reply_message(event.reply_token, message)
+    # message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{User_name.display_name} ")
+    # line_bot_api.reply_message(event.reply_token, message)
     
     
     
     if event.message.text == '查詢':
-        message = TextSendMessage(text=f"{profile}您好，要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
+        message = TextSendMessage(text=f"{User_name.display_name}您好，要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message) 
         
     if event.message.text == '你好':
@@ -92,6 +92,58 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text == 'test':
         message = TextSendMessage(text=f"幹你娘雞掰\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
+        
+def sendButton(event):
+    try:
+        message = TemplateSendMessage(
+            alt_text = '按鈕樣板',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
+                title='按鈕樣板範例',
+                text='請選擇：',
+                actions=[
+                    MessageTemplateAction(
+                        label='文字訊息',
+                        text='@購買披薩'
+                    ),
+                    URITemplateAction(
+                        label='連結網頁',
+                        uri='https://www.grazie.com.tw/menu#food=1&meal=1'
+                    ),
+                    PostbackTemplateAction(
+                        label='回傳訊息',
+                        data='action=buy'
+                    ),
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
+
+def sendPizza(event):
+    try:
+        message = TextSendMessage(
+            text = '感謝您的購買，我們盡快為您製作',
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
+def sendBack_buy(event, backdata):
+    try:
+        text1 = '感謝您的購買，我們盡快為您製作。(action 的值為' + backdata.get('action') + ')'
+
+        message = TextSendMessage(
+            text = text1
+        )
+        
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
+
 
 import os
 if __name__ == "__main__":
