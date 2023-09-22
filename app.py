@@ -27,6 +27,37 @@ def callback():
     return 'OK'
 
 
+def sendButton(event):
+    try:
+        message = TemplateSendMessage(
+            alt_text = '按鈕樣板',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
+                title='按鈕樣板範例',
+                text='請選擇：',
+                actions=[
+                    MessageTemplateAction(
+                        label='文字訊息',
+                        text='@購買披薩'
+                    ),
+                    URITemplateAction(
+                        label='連結網頁',
+                        uri='https://www.grazie.com.tw/menu#food=1&meal=1'
+                    ),
+                    PostbackTemplateAction(
+                        label='回傳訊息',
+                        data='action=buy'
+                    ),
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))        
+
+
+
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
@@ -51,6 +82,12 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     # message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{User_name.display_name} ")
     # line_bot_api.reply_message(event.reply_token, message)
+    
+    if event.message.text == '幹你娘':
+        sendButton(event)
+            
+        
+        
     
     
     
@@ -93,33 +130,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text=f"幹你娘雞掰\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
         
-def sendButton(event):
-    try:
-        message = TemplateSendMessage(
-            alt_text = '按鈕樣板',
-            template = ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
-                title='按鈕樣板範例',
-                text='請選擇：',
-                actions=[
-                    MessageTemplateAction(
-                        label='文字訊息',
-                        text='@購買披薩'
-                    ),
-                    URITemplateAction(
-                        label='連結網頁',
-                        uri='https://www.grazie.com.tw/menu#food=1&meal=1'
-                    ),
-                    PostbackTemplateAction(
-                        label='回傳訊息',
-                        data='action=buy'
-                    ),
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
 
 
 def sendPizza(event):
