@@ -55,6 +55,61 @@ def sendButton(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))        
 
+def sendCarousel(event): #轉盤樣板
+    try:
+        message = TemplateSendMessage(
+            alt_text='測試轉盤樣板',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        title='test_1',
+                        text='幹你娘姬芭591',
+                        actions=[
+                            MessageTemplateAction(
+                                label='house',
+                                text='找房子'
+                            ),
+                            URITemplateAction(
+                                label="去網站",
+                                uri='https://rent.591.com.tw/home/14959170'
+                            ),
+                            PostbackTemplateAction(
+                                label='回傳訊息',
+                                data='action=sell&item=幹你娘'
+                            )
+                        ]
+                        
+                    ),
+
+                    CarouselColumn(
+                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='test_2',
+                        text='幹你娘姬芭592',
+                        actions=[
+                            MessageTemplateAction(
+                                label='house',
+                                text='找房子'
+                            ),
+                            URITemplateAction(
+                                label="去網站",
+                                uri='https://rent.591.com.tw/home/14958919'
+                            ),
+                            PostbackTemplateAction(
+                                label='回傳訊息',
+                                data='action=sell&item=幹你娘'
+                            ),
+                        ]   
+                    ) 
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+    except :
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+    
+
+
 
 
 
