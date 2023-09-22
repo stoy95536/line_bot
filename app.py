@@ -5,6 +5,7 @@ from linebot.models import *
 import os
 import datetime
 import openai
+import pandas as pd
 
 
 
@@ -29,11 +30,24 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
+    
+    
     # user_id = event.source.userId
     # profile = line_bot_api.get_profile(event.source.userId)
     
     
     User_name = line_bot_api.get_profile(event.source.user_id)
+    
+    usersdata = {'username': f'{User_name.display_name}',
+                 'user_id': f'{event.source.user_id}',
+                 'user_input_text':f'{event.message.text}'}
+    
+    
+    usersdata_pd = pd.DataFrame(usersdata)
+    
+    
+    usersdata_pd.to_csv('user_name.csv')
+    
     
     message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{User_name.display_name} ")
     line_bot_api.reply_message(event.reply_token, message)
