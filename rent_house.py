@@ -49,6 +49,7 @@ def choose_City_six(event):
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        imageAspectRatio='square',
                         title='台北市、新北市、桃園市',
                         text='也可直接在對話筐輸入縣市',
                         actions=[
