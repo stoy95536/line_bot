@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
+openai.api_key(os.environ['CHATGPT_API_KEY'])
 
 
 @app.route("/callback", methods=['POST'])
@@ -66,8 +67,21 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     
     
-    if event.message.text == '查詢':
-        message = TextSendMessage(text=f"{User_name.display_name}您好，要問什麼問題呢？\n時間{datetime.datetime.now()}") # bot return the Message to User
+    if "查詢" in event.message.text :
+        
+        ask = event.message.text.split(' ')[1]
+        
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": f"{ask}"}
+            ]
+            )
+
+        result = completion.choices[0].message.content
+        
+        # User_name.display_name #使用者名稱
+        message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message) 
         
     if event.message.text == '你好':
