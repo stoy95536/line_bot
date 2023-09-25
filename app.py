@@ -6,7 +6,7 @@ import os
 import datetime
 import openai
 import pandas as pd
-
+import rent_house
 
 
 app = Flask(__name__)
@@ -141,10 +141,12 @@ def handle_message(event): # event.message.text 使用者輸入內容
     # line_bot_api.reply_message(event.reply_token, message)
     
     if event.message.text == '幹你娘':
-        sendButton(event)
+        pass
+        #sendButton(event)
         
     if event.message.text == '測試模板':
-        Sendbottom_template(event)
+        pass
+        #Sendbottom_template(event)
 
     
     
@@ -168,7 +170,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     #以下是找租屋對話框
     if event.message.text == '找租屋':
-        sendCarousel_City(event)
+        rent_house.sendCarousel_City(event)
         
 
         
