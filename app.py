@@ -155,15 +155,19 @@ def Run_ChatGPT(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))    
 
+def send_searching(event):
+        message = TextSendMessage(text=f"請稍等...小Bee正在努力查詢中...") # bot return the Message to User
+        line_bot_api.reply_message(event.reply_token, message)
+
 def ChatGPT(event):
     try:
         t = threading.Thread(target=Run_ChatGPT, args=(event,))
         t.start()
             
         # User_name.display_name #使用者名稱
-        message = TextSendMessage(text=f"請稍等...小Bee正在努力查詢中...") # bot return the Message to User
+        send_searching(event) # bot return the Message to User
         t.join()
-        line_bot_api.reply_message(event.reply_token, message)
+        #line_bot_api.reply_message(event.reply_token, message)
         
          
     except:
