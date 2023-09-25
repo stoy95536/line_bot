@@ -32,7 +32,7 @@ def administrative_district(event): #找租屋對話筐_選擇縣市
                     MessageTemplateAction(
                         label='離島',
                         text='離島'
-                    ),
+                    )
                 ]
             )
         )
