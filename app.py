@@ -66,7 +66,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         #Sendbottom_template(event)
 
     
-    
+    '''
     if "查詢" in event.message.text :
         
         ask = event.message.text.split(' ')[1]
@@ -83,6 +83,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         # User_name.display_name #使用者名稱
         message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message) 
+    '''
         
     if event.message.text == '你好':
         message = TextSendMessage(text=f"你好\n時間{datetime.datetime.now()}") # bot return the Message to User
