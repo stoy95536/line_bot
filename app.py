@@ -7,6 +7,8 @@ import pandas as pd
 import rent_house
 
 
+search_flag = 0
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
@@ -66,6 +68,8 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     
     if "查詢" in event.message.text :
+        global search_flag
+        search_flag = 1
         ChatGPT(event)
         # try:
         #     ask = event.message.text.split(" ")[1]
@@ -84,6 +88,10 @@ def handle_message(event): # event.message.text 使用者輸入內容
         #     line_bot_api.reply_message(event.reply_token, message) 
         # except:
         #     line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+    
+    if search_flag == 1:
+        Run_ChatGPT(event)
+        search_flag = 0
 
     
         
