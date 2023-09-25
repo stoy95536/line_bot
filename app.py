@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
-openai.api_key(f"{os.environ['CHATGPT_API_KEY']}")
+openai.api_key = os.environ['CHATGPT_API_KEY']
 
 
 @app.route("/callback", methods=['POST'])
