@@ -105,20 +105,20 @@ def choose_City_notsix(event):
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
-                        title='台北市、新北市、桃園市',
+                        title='基隆市、新竹市、新竹縣',
                         text='也可直接在對話筐輸入縣市',
                         actions=[
                             MessageTemplateAction(
-                                label='台北市',
-                                text='台北市'
+                                label='基隆市',
+                                text='基隆市'
                             ),
                             MessageTemplateAction(
-                                label='新北市',
-                                text='新北市'
+                                label='新竹市',
+                                text='新竹市'
                             ),
                             MessageTemplateAction(
-                                label='桃園市',
-                                text='桃園市'
+                                label='新竹縣',
+                                text='新竹縣'
                             ),
                         ]
                         
@@ -126,23 +126,75 @@ def choose_City_notsix(event):
 
                     CarouselColumn(
                         thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
-                        title='台中市、台南市、高雄市',
+                        title='苗栗縣、彰化縣、南投縣',
+                        text='也可直接在對話筐輸入縣縣',
+                        actions=[
+                            MessageTemplateAction(
+                                label='苗栗縣',
+                                text='苗栗縣'
+                            ),
+                            MessageTemplateAction(
+                                label='彰化縣',
+                                text='彰化縣'
+                            ),
+                            MessageTemplateAction(
+                                label='南投縣',
+                                text='南投縣'
+                            )
+                        ]   
+                    ), 
+
+                    CarouselColumn(
+                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='雲林縣、嘉義市、嘉義縣',
                         text='也可直接在對話筐輸入縣市',
                         actions=[
                             MessageTemplateAction(
-                                label='台中市',
-                                text='台中市'
+                                label='雲林縣',
+                                text='雲林縣'
                             ),
                             MessageTemplateAction(
-                                label='台南市',
-                                text='台南市'
+                                label='嘉義市',
+                                text='嘉義市'
                             ),
                             MessageTemplateAction(
-                                label='高雄市',
-                                text='高雄市'
+                                label='嘉義縣',
+                                text='嘉義縣'
                             )
                         ]   
-                    ) 
+                    ), 
+                    
+                    CarouselColumn(
+                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='雲林縣、花蓮縣、台東縣',
+                        text='也可直接在對話筐輸入縣市',
+                        actions=[
+                            MessageTemplateAction(
+                                label='雲林縣',
+                                text='雲林縣'
+                            ),
+                            MessageTemplateAction(
+                                label='花蓮縣',
+                                text='花蓮縣'
+                            ),
+                            MessageTemplateAction(
+                                label='台東縣',
+                                text='台東縣'
+                            )
+                        ]   
+                    ), 
+
+                    CarouselColumn(
+                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='屏東縣',
+                        text='也可直接在對話筐輸入縣市',
+                        actions=[
+                            MessageTemplateAction(
+                                label='屏東縣',
+                                text='屏東縣'
+                            )
+                        ]   
+                    ), 
                 ]
             )
         )
