@@ -109,6 +109,34 @@ def sendCarousel(event): #轉盤樣板
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
 
+def sendButton_find(event): #找租屋對話筐1
+    try:
+        message = TemplateSendMessage(
+            alt_text = '按鈕樣板',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
+                title='按鈕樣板範例',
+                text='請選擇：',
+                actions=[
+                    MessageTemplateAction(
+                        label='文字訊息',
+                        text='@購買披薩'
+                    ),
+                    URITemplateAction(
+                        label='連結網頁',
+                        uri='https://www.grazie.com.tw/menu#food=1&meal=1'
+                    ),
+                    PostbackTemplateAction(
+                        label='回傳訊息',
+                        data='action=buy'
+                    ),
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!')) 
+
     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
@@ -161,11 +189,14 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text=f"https://www.google.com/maps/search/?api=1&query={location}\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
         
-        
     if '提醒' in event.message.text:
         tip = event.message.text.split(" ")[1]
         message = TextSendMessage(text=f"目前有符合您的項目喔\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
+
+    #以下是找租屋對話框
+    if event.message.text == '找租屋':
+        sendButton_find(event)
         
 
         
