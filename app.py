@@ -114,21 +114,33 @@ def sendButton_find(event): #找租屋對話筐1
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
             template = ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
-                title='按鈕樣板範例',
-                text='請選擇：',
+                #thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
+                title='請問你要找哪個縣市的房子呢？',
+                text='可根據按鈕點選，也可直接在對話筐輸入縣市：',
                 actions=[
                     MessageTemplateAction(
-                        label='文字訊息',
-                        text='@購買披薩'
+                        label='台北市',
+                        text='台北市'
                     ),
-                    URITemplateAction(
-                        label='連結網頁',
-                        uri='https://www.grazie.com.tw/menu#food=1&meal=1'
+                    MessageTemplateAction(
+                        label='新北市',
+                        text='新北市'
                     ),
-                    PostbackTemplateAction(
-                        label='回傳訊息',
-                        data='action=buy'
+                    MessageTemplateAction(
+                        label='桃園市',
+                        text='桃園市'
+                    ),
+                    MessageTemplateAction(
+                        label='台中市',
+                        text='台中市'
+                    ),
+                    MessageTemplateAction(
+                        label='高雄市',
+                        text='高雄市'
+                    ),
+                    MessageTemplateAction(
+                        label='台南市',
+                        text='台南市'
                     ),
                 ]
             )
