@@ -114,7 +114,7 @@ def sendButton_find(event): #找租屋對話筐_選擇縣市
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
             template = ButtonsTemplate(
-                #thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
+                thumbnail_image_url='https://res.sinyi.com.tw/rent/C293461/smallimg/A.JPG',
                 title='請問你要找哪個縣市的房子呢？',
                 text='可根據按鈕點選，也可直接在對話筐輸入縣市：',
                 actions=[
