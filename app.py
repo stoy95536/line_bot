@@ -55,29 +55,29 @@ def sendButton(event):
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))        
 
-def sendCarousel(event): #轉盤樣板
+def sendCarousel_City(event): #對話筐城市查詢_1
     try:
         message = TemplateSendMessage(
-            alt_text='測試轉盤樣板',
+            alt_text='城市選擇',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
-                        title='test_1',
-                        text='幹你娘姬芭591',
+                        title='請問你要找哪個縣市的房子呢？',
+                        #text='幹你娘姬芭591',
                         actions=[
                             MessageTemplateAction(
-                                label='house',
-                                text='找房子'
+                                label='台北市',
+                                text='台北市'
                             ),
-                            URITemplateAction(
-                                label="去網站",
-                                uri='https://rent.591.com.tw/home/14959170'
+                            MessageTemplateAction(
+                                label='新北市',
+                                text='新北市'
                             ),
-                            PostbackTemplateAction(
-                                label='回傳訊息',
-                                data='action=sell&item=幹你娘'
-                            )
+                            MessageTemplateAction(
+                                label='桃園市',
+                                text='桃園市'
+                            ),
                         ]
                         
                     ),
@@ -88,16 +88,16 @@ def sendCarousel(event): #轉盤樣板
                         text='幹你娘姬芭592',
                         actions=[
                             MessageTemplateAction(
-                                label='house',
-                                text='找房子'
+                                label='台中市',
+                                text='台中市'
                             ),
-                            URITemplateAction(
-                                label="去網站",
-                                uri='https://rent.591.com.tw/home/14958919'
+                            MessageTemplateAction(
+                                label="台南市",
+                                text="台南市"
                             ),
-                            PostbackTemplateAction(
-                                label='回傳訊息',
-                                data='action=sell&item=幹你娘'
+                            MessageTemplateAction(
+                                label='高雄市',
+                                text='高雄市'
                             ),
                         ]   
                     ) 
@@ -172,7 +172,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         sendButton(event)
         
     if event.message.text == '幹':
-        sendCarousel(event)
+        sendCarousel_City(event)
 
     
     
@@ -196,7 +196,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     #以下是找租屋對話框
     if event.message.text == '找租屋':
-        sendButton_find(event)
+        sendCarousel_City(event)
         
 
         
