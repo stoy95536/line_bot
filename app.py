@@ -116,7 +116,7 @@ def sendCarousel_City(event): #對話筐城市查詢_1
                     CarouselColumn(
                         thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
                         title='請問你要找哪個縣市的房子呢？',
-                        #text='幹你娘姬芭591',
+                        text='也可直接在對話筐輸入縣市',
                         actions=[
                             MessageTemplateAction(
                                 label='台北市',
@@ -136,8 +136,8 @@ def sendCarousel_City(event): #對話筐城市查詢_1
 
                     CarouselColumn(
                         thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
-                        title='test_2',
-                        text='幹你娘姬芭592',
+                        title='請問你要找哪個縣市的房子呢?',
+                        text='也可直接在對話筐輸入縣市',
                         actions=[
                             MessageTemplateAction(
                                 label='台中市',
