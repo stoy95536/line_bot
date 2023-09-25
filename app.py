@@ -107,12 +107,9 @@ def sendCarousel(event): #轉盤樣板
         line_bot_api.reply_message(event.reply_token, message)
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+
     
-
-
-
-
-
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
@@ -124,6 +121,11 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     User_name = line_bot_api.get_profile(event.source.user_id)
     
+    
+
+
+
+
     # usersdata = {'username': f'{User_name.display_name}',
     #              'user_id': f'{event.source.user_id}',
     #              'user_input_text':f'{event.message.text}'}
@@ -143,10 +145,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         
     if event.message.text == '幹':
         sendCarousel(event)
-            
-        
-        
-    
+
     
     
     if event.message.text == '查詢':
@@ -169,8 +168,6 @@ def handle_message(event): # event.message.text 使用者輸入內容
         line_bot_api.reply_message(event.reply_token, message)
         
 
-
-
         
     
     # if event.message.text == '找地圖':
@@ -188,8 +185,6 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text=f"幹你娘雞掰\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
         
-
-
 
 def sendPizza(event):
     try:
