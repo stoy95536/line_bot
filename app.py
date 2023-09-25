@@ -25,91 +25,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
-
-#對話筐城市查詢_1
-def sendCarousel_City(event): 
-    try:
-        message = TemplateSendMessage(
-            alt_text='城市選擇',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
-                        title='請問你要找哪個縣市的房子呢？',
-                        text='也可直接在對話筐輸入縣市',
-                        actions=[
-                            MessageTemplateAction(
-                                label='台北市',
-                                text='台北市'
-                            ),
-                            MessageTemplateAction(
-                                label='新北市',
-                                text='新北市'
-                            ),
-                            MessageTemplateAction(
-                                label='桃園市',
-                                text='桃園市'
-                            ),
-                        ]
-                        
-                    ),
-
-                    CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
-                        title='請問你要找哪個縣市的房子呢?',
-                        text='也可直接在對話筐輸入縣市',
-                        actions=[
-                            MessageTemplateAction(
-                                label='台中市',
-                                text='台中市'
-                            ),
-                            MessageTemplateAction(
-                                label='台南市',
-                                text='台南市'
-                            ),
-                            MessageTemplateAction(
-                                label='高雄市',
-                                text='高雄市'
-                            )
-                        ]   
-                    ) 
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except :
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
-
-
-def sendButton_find(event): #找租屋對話筐_選擇縣市
-    try:
-        message = TemplateSendMessage(
-            alt_text = '按鈕樣板',
-            template = ButtonsTemplate(
-                thumbnail_image_url='https://res.sinyi.com.tw/rent/C293461/smallimg/A.JPG',
-                title='請問你要找哪個縣市的房子呢？',
-                text='可根據按鈕點選，也可直接在對話筐輸入縣市：',
-                actions=[
-                    MessageTemplateAction(
-                        label='台北市',
-                        text='台北市'
-                    ),
-                    MessageTemplateAction(
-                        label='新北市',
-                        text='新北市'
-                    ),
-                    MessageTemplateAction(
-                        label='桃園市',
-                        text='桃園市'
-                    ),
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!')) 
-
-    
+     
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
@@ -170,7 +86,11 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     #以下是找租屋對話框
     if event.message.text == '找租屋':
+        rent_house.administrative＿district(event)
+        
+    if event.message.text == '六都':
         rent_house.sendCarousel_City(event)
+
         
 
         
