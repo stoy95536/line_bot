@@ -100,7 +100,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     #以下是找租屋對話框
     if event.message.text == '找租屋':
-        rent_house.administrative＿district(event)
+        rent_house.administrative_district(event)
         
     if event.message.text == '六都':
         rent_house.choose_City_six(event)

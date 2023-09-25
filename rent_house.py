@@ -12,7 +12,7 @@ line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 #六都 離島 非六都選擇
-def administrative＿district(event): #找租屋對話筐_選擇縣市
+def administrative_district(event): #找租屋對話筐_選擇縣市
     try:
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
