@@ -140,6 +140,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         
 def Run_ChatGPT(event):
     try:
+        send_searching(event)
         ask = event.message.text.split(" ")[1]
         
         completion = openai.ChatCompletion.create(
@@ -148,7 +149,6 @@ def Run_ChatGPT(event):
                 {"role": "user", "content": f"{ask}請用繁體字回答"}
             ]
         )
-        send_searching(event)
         result = completion.choices[0].message.content
         message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
@@ -161,12 +161,15 @@ def send_searching(event):
 
 def ChatGPT(event):
     try:
+        Run_ChatGPT(event)
+        '''
         t = threading.Thread(target=Run_ChatGPT, args=(event,))
         t.start()
             
         # User_name.display_name #使用者名稱
         # bot return the Message to User
         t.join()
+        '''
         #line_bot_api.reply_message(event.reply_token, message)
         
          
