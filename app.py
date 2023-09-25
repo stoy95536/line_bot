@@ -223,7 +223,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text == '幹你娘':
         sendButton(event)
         
-    if event.message.text == '幹':
+    if event.message.text == '測試模板':
         Sendbottom_template(event)
 
     
