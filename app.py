@@ -131,19 +131,21 @@ def handle_message(event): # event.message.text 使用者輸入內容
         
         
 def Run_ChatGPT(event):
-    ask = event.message.text.split(" ")[1]
-    
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": f"{ask}請用繁體字回答"}
-        ]
+    try:
+        ask = event.message.text.split(" ")[1]
+        
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": f"{ask}請用繁體字回答"}
+            ]
         )
 
-    result = completion.choices[0].message.content
-    message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-    line_bot_api.reply_message(event.reply_token, message)
-    
+        result = completion.choices[0].message.content
+        message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
+        line_bot_api.reply_message(event.reply_token, message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))    
 
 def ChatGPT(event):
     try:
@@ -151,8 +153,9 @@ def ChatGPT(event):
         t.start()
             
         # User_name.display_name #使用者名稱
-        message = TextSendMessage(text=f"請稍等小蜜蜂正在努力查詢中...") # bot return the Message to User
+        message = TextSendMessage(text=f"請稍等...小Bee正在努力查詢中...") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
+        t.join()
          
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
