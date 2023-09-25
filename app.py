@@ -2,9 +2,7 @@ from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
-import os
-import datetime
-import openai
+import os,datetime,openai,threading
 import pandas as pd
 import rent_house
 
@@ -68,23 +66,24 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     
     if "查詢" in event.message.text :
-        try:
-            ask = event.message.text.split(" ")[1]
+        ChatGPT(event)
+        # try:
+        #     ask = event.message.text.split(" ")[1]
             
-            completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "user", "content": f"{ask}請用繁體字回答"}
-                ]
-                )
+        #     completion = openai.ChatCompletion.create(
+        #         model="gpt-3.5-turbo",
+        #         messages=[
+        #             {"role": "user", "content": f"{ask}請用繁體字回答"}
+        #         ]
+        #         )
 
-            result = completion.choices[0].message.content
+        #     result = completion.choices[0].message.content
             
-            # User_name.display_name #使用者名稱
-            message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-            line_bot_api.reply_message(event.reply_token, message) 
-        except:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+        #     # User_name.display_name #使用者名稱
+        #     message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
+        #     line_bot_api.reply_message(event.reply_token, message) 
+        # except:
+        #     line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
 
     
         
@@ -130,6 +129,34 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text=f"幹你娘雞掰\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
         
+        
+def Run_ChatGPT(event):
+    ask = event.message.text.split(" ")[1]
+    
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": f"{ask}請用繁體字回答"}
+        ]
+        )
+
+    result = completion.choices[0].message.content
+    message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
+    line_bot_api.reply_message(event.reply_token, message)
+    
+
+def ChatGPT(event):
+    try:
+        t = threading.Thread(target=Run_ChatGPT, args=(event,))
+        t.start()
+            
+        # User_name.display_name #使用者名稱
+        message = TextSendMessage(text=f"請稍等小蜜蜂正在努力查詢中...") # bot return the Message to User
+        line_bot_api.reply_message(event.reply_token, message)
+         
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
 
 def sendPizza(event):
     try:
@@ -139,6 +166,7 @@ def sendPizza(event):
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+        
 
 def sendBack_buy(event, backdata):
     try:
