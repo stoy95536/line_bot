@@ -109,7 +109,7 @@ def sendCarousel(event): #轉盤樣板
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
 
-def sendButton_find(event): #找租屋對話筐1
+def sendButton_find(event): #找租屋對話筐_選擇縣市
     try:
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
@@ -129,18 +129,6 @@ def sendButton_find(event): #找租屋對話筐1
                     MessageTemplateAction(
                         label='桃園市',
                         text='桃園市'
-                    ),
-                    MessageTemplateAction(
-                        label='台中市',
-                        text='台中市'
-                    ),
-                    MessageTemplateAction(
-                        label='高雄市',
-                        text='高雄市'
-                    ),
-                    MessageTemplateAction(
-                        label='台南市',
-                        text='台南市'
                     ),
                 ]
             )
