@@ -144,13 +144,13 @@ def sendCarousel_City(event): #對話筐城市查詢_1
                                 text='台中市'
                             ),
                             MessageTemplateAction(
-                                label="台南市",
-                                text="台南市"
+                                label='台南市',
+                                text='台南市'
                             ),
                             MessageTemplateAction(
                                 label='高雄市',
                                 text='高雄市'
-                            ),
+                            )
                         ]   
                     ) 
                 ]
