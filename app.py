@@ -74,7 +74,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
             completion = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "user", "content": f"{ask}"}
+                    {"role": "user", "content": f"{ask}請用繁體字回答"}
                 ]
                 )
 
