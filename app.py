@@ -66,24 +66,27 @@ def handle_message(event): # event.message.text 使用者輸入內容
         #Sendbottom_template(event)
 
     
-    '''
+    
     if "查詢" in event.message.text :
-        
-        ask = event.message.text.split(' ')[1]
-        
-        completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": f"{ask}"}
-            ]
-            )
+        try:
+            ask = event.message.text.split(" ")[1]
+            
+            completion = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "user", "content": f"{ask}"}
+                ]
+                )
 
-        result = completion.choices[0].message.content
-        
-        # User_name.display_name #使用者名稱
-        message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message) 
-    '''
+            result = completion.choices[0].message.content
+            
+            # User_name.display_name #使用者名稱
+            message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
+            line_bot_api.reply_message(event.reply_token, message) 
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
+    
         
     if event.message.text == '你好':
         message = TextSendMessage(text=f"你好\n時間{datetime.datetime.now()}") # bot return the Message to User
