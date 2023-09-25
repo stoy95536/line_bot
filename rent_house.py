@@ -19,7 +19,7 @@ def administrative_district(event): #找租屋對話筐_選擇縣市
             template = ButtonsTemplate(
                 thumbnail_image_url='https://a.bbkz.net/guide/images/2/2d/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%9C%96.png',
                 title='請問你要找哪個縣市的房子呢？',
-                #text='可根據按鈕點選，也可直接在對話筐輸入縣市：',
+                text='',
                 actions=[
                     MessageTemplateAction(
                         label='六都',
