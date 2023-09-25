@@ -89,8 +89,10 @@ def handle_message(event): # event.message.text 使用者輸入內容
         rent_house.administrative＿district(event)
         
     if event.message.text == '六都':
-        rent_house.sendCarousel_City(event)
+        rent_house.choose_City_six(event)
 
+    if event.message.text == '非六都':
+        rent_house.choose_City_notsix(event)
         
 
         
