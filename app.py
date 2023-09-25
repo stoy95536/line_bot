@@ -53,7 +53,59 @@ def sendButton(event):
         )
         line_bot_api.reply_message(event.reply_token,message)
     except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))        
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))     
+
+#滾動式模板
+def Sendbottom_template(event):
+
+    message = TemplateSendMessage(
+        alt_text='Carousel template',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url='https://ithelp.ithome.com.tw/storage/image/fight.svg',
+                    title='Carousel template1',
+                    text='iThome鐵人2021-1',
+                    actions=[
+                        PostbackAction(
+                            label='postback1',
+                            display_text='postback text1',
+                            data='action=buy&itemid=1'
+                        ),
+                        MessageAction(
+                            label='message1',
+                            text='message text1'
+                        ),
+                        URIAction(
+                            label='uri1',
+                            uri='http://example.com/1'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://ithelp.ithome.com.tw/404/bear404.jpg',
+                    title='Carousel template2',
+                    text='iThome鐵人2021-2',
+                    actions=[
+                        PostbackAction(
+                            label='postback2',
+                            display_text='postback text2',
+                            data='action=buy&itemid=2'
+                        ),
+                        MessageAction(
+                            label='message2',
+                            text='message text2'
+                        ),
+                        URIAction(
+                            label='uri2',
+                            uri='http://example.com/2'
+                        )
+                    ]
+                )
+            ]
+        )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
 
 def sendCarousel_City(event): #對話筐城市查詢_1
     try:
@@ -172,7 +224,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         sendButton(event)
         
     if event.message.text == '幹':
-        sendCarousel_City(event)
+        Sendbottom_template(event)
 
     
     
