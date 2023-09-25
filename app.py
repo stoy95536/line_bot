@@ -148,7 +148,7 @@ def Run_ChatGPT(event):
                 {"role": "user", "content": f"{ask}請用繁體字回答"}
             ]
         )
-
+        send_searching(event)
         result = completion.choices[0].message.content
         message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
@@ -165,7 +165,7 @@ def ChatGPT(event):
         t.start()
             
         # User_name.display_name #使用者名稱
-        send_searching(event) # bot return the Message to User
+        # bot return the Message to User
         t.join()
         #line_bot_api.reply_message(event.reply_token, message)
         
