@@ -234,18 +234,18 @@ def fake_house1(event):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://img2.591.com.tw/house/2023/09/25/169564310332228103.jpg!750x588.water2.jpg',
+                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n912/d4/98/23682912_1_b.jpeg?1695735092',
                     imageAspectRatio='square',
-                    title='9,300元/月',
-                    text='獨立套房|9坪|6F/6F|公寓\n西屯區西屯路二段',
+                    title='6,999元/月',
+                    text='獨立套房|13坪|1樓/2樓|透天厝\n台中市西屯區西屯路二段惠北巷',
                     actions=[
                         URIAction(
                             label='更多資訊',
-                            uri='https://rent.591.com.tw/home/15313071'
+                            uri='https://www.rakuya.com.tw/rent_item/info?ehid=0162a523682912a'
                         ), 
                         MessageTemplateAction(
                             label='地理位置',
-                            text='找地圖 西屯區西屯路二段'
+                            text='找地圖 台中市西屯區西屯路二段惠北巷'
                         ),
                         MessageTemplateAction(
                             label='詢問',
