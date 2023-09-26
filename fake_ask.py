@@ -186,66 +186,33 @@ def ask_Q2(event):
                 CarouselColumn(
                     imageAspectRatio='square',
                     title='Q2',
-                    text='附近的公共交通工具方便嗎？',
+                    text='附近有素食或特殊飲食需求的餐廳嗎？',
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近的公共交通工具方便嗎?'
+                            text='詢問 西屯區青海路二段193巷附近有素食或特殊飲食需求的餐廳嗎?'
                         ),
                     ]
                 ),
                 CarouselColumn(
                     imageAspectRatio='square',
                     title='Q3',
-                    text='附近有公園或是娛樂設施嗎？',
+                    text='附近是否有夜市或街頭小吃？',
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有公園或是娛樂設施嗎?'
+                            text='詢問 西屯區青海路二段193巷附近是否有夜市或街頭小吃?'
                         ),
                     ]
                 ),
                 CarouselColumn(
                     imageAspectRatio='square',
                     title='Q4',
-                    text='附近有運動地點或是健身中心嗎?',
+                    text='附近附近是否有咖啡廳?',
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有運動地點或是健身中心嗎?'
-                        ),
-                    ]
-                ),
-                CarouselColumn(
-                    imageAspectRatio='square',
-                    title='Q5',
-                    text='附近是否有停車場或停車位？',
-                    actions=[
-                        MessageTemplateAction(
-                            label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近是否有停車場或停車位?'
-                        ),
-                    ]
-                ),
-                CarouselColumn(
-                    imageAspectRatio='square',
-                    title='Q6',
-                    text='附近是否有醫院?',
-                    actions=[
-                        MessageTemplateAction(
-                            label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近是否有醫院?'
-                        ),
-                    ]
-                ),
-                CarouselColumn(
-                    imageAspectRatio='square',
-                    title='Q7',
-                    text='附近有購物中心或商場嗎？',
-                    actions=[
-                        MessageTemplateAction(
-                            label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有購物中心或商場嗎?'
+                            text='詢問 西屯區青海路二段193巷附近附近是否有咖啡廳?'
                         ),
                     ]
                 ),
@@ -254,57 +221,3 @@ def ask_Q2(event):
         )
     )
     line_bot_api.reply_message(event.reply_token,message)
-
-def test(event): 
-    try:
-        message = TemplateSendMessage(
-            alt_text='台中行政區',
-            template=CarouselTemplate(
-                columns=[
-                    CarouselColumn(
-                        #thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
-                        imageAspectRatio='square',
-                        title='90%的人都點擊了以下區域',
-                        text='西屯區、北屯區、南屯區',
-                        actions=[
-                            MessageTemplateAction(
-                                label='西屯區',
-                                text='西屯區'
-                            ),
-                            MessageTemplateAction(
-                                label='北屯區',
-                                text='北屯區'
-                            ),
-                            MessageTemplateAction(
-                                label='南屯區',
-                                text='南屯區'
-                            ),
-                        ]
-                        
-                    ),
-
-                    CarouselColumn(
-                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
-                        title='若所選行政區不在選項中',
-                        text='可直接在對話筐輸入',
-                        actions=[
-                            MessageTemplateAction(
-                                label='北區',
-                                text='北區'
-                            ),
-                            MessageTemplateAction(
-                                label='西區',
-                                text='西區'
-                            ),
-                            MessageTemplateAction(
-                                label='東區',
-                                text='東區'
-                            )
-                        ]   
-                    ) 
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except :
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
