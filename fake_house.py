@@ -293,6 +293,26 @@ def fake_house1(event):
                         ),
                     ]
                 ),
+                CarouselColumn(
+                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n731/0b/23/23682731_1_b.jpeg?1695731056',
+                    imageAspectRatio='square',
+                    title='7,699元/月',
+                    text='獨立套房|13坪|2樓/4樓|透天厝\n台中市西屯區四川路',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://www.rakuya.com.tw/rent_item/info?ehid=011a9223682769b'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 台中市西屯區四川路'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
             ]
         )
     )
