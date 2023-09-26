@@ -75,6 +75,8 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     User_name = line_bot_api.get_profile(event.source.user_id)
     
+    line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text='7414'))
+    
 
 
     # usersdata = {'username': f'{User_name.display_name}',
