@@ -8,12 +8,24 @@ import rent_house
 
 
 search_flag = 0
+event_data = []
+
 
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 openai.api_key = os.environ['CHATGPT_API_KEY']
+
+@app.route("/")
+def home():
+  line_bot_api = LineBotApi('你的 access token')
+  try:
+    # 網址被執行時，等同使用 GET 方法發送 request，觸發 LINE Message API 的 push_message 方法
+    line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text='Hello World!!!'))
+    return 'OK'
+  except:
+    print('error')
 
 
 @app.route("/callback", methods=['POST'])
@@ -30,17 +42,15 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event): # event.message.text 使用者輸入內容
     
-    
-    
+    global event_data
+    event_data.append(event)
+     
     # user_id = event.source.userId
     # profile = line_bot_api.get_profile(event.source.userId)
     
     
     User_name = line_bot_api.get_profile(event.source.user_id)
     
-    
-
-
 
 
     # usersdata = {'username': f'{User_name.display_name}',
