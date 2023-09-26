@@ -329,8 +329,8 @@ def choose_rent(event):
                         text=':D',
                         actions=[
                             MessageTemplateAction(
-                                label='5000-',
-                                text='5000-'
+                                label='5000以下',
+                                text='5000以下'
                             ),
                             MessageTemplateAction(
                                 label='5000-10000',
@@ -358,8 +358,8 @@ def choose_rent(event):
                                 text='30000-40000'
                             ),
                             MessageTemplateAction(
-                                label='40000+',
-                                text='40000+'
+                                label='40000以上',
+                                text='40000以上'
                             )
                         ]   
                     ) 

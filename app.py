@@ -95,7 +95,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text in ['整層住家', '獨立套房', '分租套房', '雅房', '車位', '其他']:
         rent_house.choose_rent(event)
 
-    if event.message.text in ['5000-', '5000-10000', '10000-20000', '20000-30000', '30000-40000', '40000+']:
+    if event.message.text in ['5000以下', '5000-10000', '10000-20000', '20000-30000', '30000-40000', '40000以上']:
         pass
         #這裡要接爬到的資料 here
         
