@@ -19,7 +19,6 @@ openai.api_key = os.environ['CHATGPT_API_KEY']
 
 @app.route("/")
 def home():
-  line_bot_api = LineBotApi('你的 access token')
   try:
     # 網址被執行時，等同使用 GET 方法發送 request，觸發 LINE Message API 的 push_message 方法
     line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text='Hello World!!!'))
