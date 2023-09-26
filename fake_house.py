@@ -45,7 +45,7 @@ def fake_house(event):
                         thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
                         title='6,500元/月',
-                        text='好屋台中市-西屯區_西屯區逢甲商圈台水台電~',
+                        text='獨立套房|8坪|6F/12F|電梯大樓\n西屯區河南路二段259號',
                         actions=[
                             URIAction(
                                 label='更多資訊',
@@ -66,7 +66,7 @@ def fake_house(event):
                         thumbnail_image_url='https://img2.591.com.tw/house/2023/08/08/169149535003070801.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
                         title='8,000元/月',
-                        text='有電梯近,新光三越、老虎城、秋紅谷、逢甲',
+                        text='獨立套房|7坪|4F/4F|電梯大樓\n西屯區朝馬一街22號',
                         actions=[
                             URIAction(
                                 label='更多資訊',
@@ -87,7 +87,7 @@ def fake_house(event):
                         thumbnail_image_url='https://img2.591.com.tw/house/2018/10/30/154085826271038606.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
                         title='9,300元/月',
-                        text='近sogo永豐棧全新裝潢陽台獨洗',
+                        text='獨立套房|10坪|10F/10F|電梯大樓\n西屯區重慶路',
                         actions=[
                             URIAction(
                                 label='更多資訊',
@@ -108,7 +108,7 @@ def fake_house(event):
                         thumbnail_image_url='hhttps://img2.591.com.tw/house/2023/09/24/169554232780753206.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
                         title='7,000元/月',
-                        text='免仲介費✨台水電✅可租屋補助✅管理員✅',
+                        text='獨立套房|8坪|4F/7F|電梯大樓\n西屯區河南路二段259號',
                         actions=[
                             URIAction(
                                 label='更多資訊',
@@ -129,7 +129,7 @@ def fake_house(event):
                         thumbnail_image_url='https://static.rakuya.com.tw/r2/n760/03/38/23682760_1_b.jpeg?1695731975',
                         imageAspectRatio='square',
                         title='7,499元/月',
-                        text='⭐可貓咪⭐電梯美屋⭐獨洗⭐可凸窗曬衣⭐秒殺速洽⭐',
+                        text='獨立套房|13坪|7樓/8樓|電梯大廈\n台中市西屯區西屯路二段',
                         actions=[
                             URIAction(
                                 label='更多資訊',
@@ -145,9 +145,7 @@ def fake_house(event):
                             ),
                         ]
                         
-                    ),
-    
-
+                    )
                 ]
             )
         )
