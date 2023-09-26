@@ -104,15 +104,15 @@ def fake_house(event):
                         ]
                         
                     ),
-                                        CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
+                    CarouselColumn(
+                        thumbnail_image_url='hhttps://img2.591.com.tw/house/2023/09/24/169554232780753206.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
-                        title='好屋台中市-西屯區_西屯區逢甲商圈台水台電~',
-                        text='.',
+                        title='7,000元/月',
+                        text='免仲介費✨台水電✅可租屋補助✅管理員✅',
                         actions=[
                             URIAction(
                                 label='更多資訊',
-                                uri='https://rent.591.com.tw/home/15226936'
+                                uri='https://rent.591.com.tw/home/15310656'
                             ), 
                             MessageTemplateAction(
                                 label='地理位置',
@@ -120,24 +120,24 @@ def fake_house(event):
                             ),
                             MessageTemplateAction(
                                 label='詢問',
-                                text='請輸入:詢問 想問的問題'
+                                text='請輸入 : 詢問 想問的問題'
                             ),
                         ]
                         
                     ),
-                                        CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
+                    CarouselColumn(
+                        thumbnail_image_url='https://static.rakuya.com.tw/r2/n760/03/38/23682760_1_b.jpeg?1695731975',
                         imageAspectRatio='square',
-                        title='好屋台中市-西屯區_西屯區逢甲商圈台水台電~',
-                        text='.',
+                        title='7,499元/月',
+                        text='⭐可貓咪⭐電梯美屋⭐獨洗⭐可凸窗曬衣⭐秒殺速洽⭐',
                         actions=[
                             URIAction(
                                 label='更多資訊',
-                                uri='https://rent.591.com.tw/home/15226936'
+                                uri='https://www.rakuya.com.tw/rent_item/info?ehid=04cef1236827607'
                             ), 
                             MessageTemplateAction(
                                 label='地理位置',
-                                text='找地圖 西屯區河南路二段259號'
+                                text='找地圖 台中市西屯區西屯路二段'
                             ),
                             MessageTemplateAction(
                                 label='詢問',
