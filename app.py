@@ -17,12 +17,26 @@ line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 openai.api_key = os.environ['CHATGPT_API_KEY']
 
+# @app.route("/")
+# def home():
+#   try:
+#     # 網址被執行時，等同使用 GET 方法發送 request，觸發 LINE Message API 的 push_message 方法
+#     line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text='Hello World!!!'))
+#     return 'OK'
+#   except:
+#     print('error')
+    
 @app.route("/")
 def home():
+# line_bot_api = LineBotApi('你的 access token')
   try:
-    # 網址被執行時，等同使用 GET 方法發送 request，觸發 LINE Message API 的 push_message 方法
-    line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text='Hello World!!!'))
-    return 'OK'
+    msg = request.args.get('msg')   # 取得網址的 msg 參數
+    if msg != None:
+      # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
+      line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text=msg))
+      return msg
+    else:
+      return 'OK'
   except:
     print('error')
 
