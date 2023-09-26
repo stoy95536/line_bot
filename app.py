@@ -85,6 +85,9 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     if event.message.text == '非六都':
         rent_house.choose_City_notsix(event)
+
+    if event.message.text == '台中':
+        rent_house.choose_district_Taichung(event)
         
 
         
