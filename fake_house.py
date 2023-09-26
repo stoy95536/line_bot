@@ -191,8 +191,48 @@ def fake_house1(event):
                             label='詢問',
                             text='請輸入:詢問 想問的問題'
                         ),
-                ]
-                )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://img2.591.com.tw/house/2023/08/08/169149535003070801.jpg!750x588.water2.jpg',
+                    imageAspectRatio='square',
+                    title='8,000元/月',
+                    text='獨立套房|7坪|4F/4F|電梯大樓\n西屯區朝馬一街22號',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://rent.591.com.tw/home/15309639'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區朝馬一街22號'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://img2.591.com.tw/house/2023/08/08/169149535003070801.jpg!750x588.water2.jpg',
+                    imageAspectRatio='square',
+                    title='8,000元/月',
+                    text='獨立套房|7坪|4F/4F|電梯大樓\n西屯區朝馬一街22號',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://rent.591.com.tw/home/15309639'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區朝馬一街22號'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
             ]
         )
     )
