@@ -223,9 +223,33 @@ def ask(event):
         columns=[
             ImageCarouselColumn(
                 action=PostbackAction(
-                    label='postback1',
-                    display_text='postback text1',
-                    data='action=buy&itemid=1'
+                    label='區域/交通搜尋',
+                    display_text='區域/交通搜尋',
+                    data='區域/交通搜尋'
+                )
+            ),
+            ImageCarouselColumn(
+                action=PostbackAction(
+                    label='postback2',
+                    display_text='postback text2',
+                    data='action=buy&itemid=2'
+                )
+            )
+        ]
+    )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
+
+def ask_Q1(event):
+    message = TemplateSendMessage(
+    alt_text='ImageCarousel template',
+    template=ImageCarouselTemplate(
+        columns=[
+            ImageCarouselColumn(
+                action=PostbackAction(
+                    label='區域/交通搜尋',
+                    display_text='區域/交通搜尋',
+                    data='區域/交通搜尋'
                 )
             ),
             ImageCarouselColumn(

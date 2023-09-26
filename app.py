@@ -105,7 +105,12 @@ def handle_message(event): # event.message.text 使用者輸入內容
         fake_house.ask(event)
 
     if event.message.text == '詢問西屯區青海路二段193巷':
-        pass
+        fake_house.ask(event)
+
+    if event.message.text == '區域/交通搜尋':
+        fake_house.akk_Q1(event)
+
+    
 
     
     # if event.message.text == '找地圖':
