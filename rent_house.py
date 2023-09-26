@@ -194,7 +194,7 @@ def choose_City_notsix(event):
                                 text='屏東縣'
                             )
                         ]   
-                    ), 
+                    )
                 ]
             )
         )

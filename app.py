@@ -150,7 +150,6 @@ def handle_message(event): # event.message.text 使用者輸入內容
         
 def Run_ChatGPT(event):
     try:
-        send_searching(event)
         ask = event.message.text.split(" ")[1]
         
         completion = openai.ChatCompletion.create(
@@ -164,10 +163,6 @@ def Run_ChatGPT(event):
         line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))    
-
-def send_searching(event):
-        message = TextSendMessage(text=f"請稍等...小Bee正在努力查詢中...") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message)
 
 def ChatGPT(event):
     try:
