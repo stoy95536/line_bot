@@ -214,22 +214,42 @@ def fake_house1(event):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://img2.591.com.tw/house/2023/08/08/169149535003070801.jpg!750x588.water2.jpg',
+                    thumbnail_image_url='https://img2.591.com.tw/house/2018/10/30/154085826271038606.jpg!750x588.water2.jpg',
                     imageAspectRatio='square',
-                    title='8,000元/月',
-                    text='獨立套房|7坪|4F/4F|電梯大樓\n西屯區朝馬一街22號',
+                    title='9,300元/月',
+                    text='獨立套房|10坪|10F/10F|電梯大樓\n西屯區重慶路',
                     actions=[
                         URIAction(
                             label='更多資訊',
-                            uri='https://rent.591.com.tw/home/15309639'
+                            uri='https://rent.591.com.tw/home/12831413'
                         ), 
                         MessageTemplateAction(
                             label='地理位置',
-                            text='找地圖 西屯區朝馬一街22號'
+                            text='找地圖 西屯區重慶路'
                         ),
                         MessageTemplateAction(
                             label='詢問',
                             text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='hhttps://img2.591.com.tw/house/2023/09/24/169554232780753206.jpg!750x588.water2.jpg',
+                    imageAspectRatio='square',
+                    title='7,000元/月',
+                    text='獨立套房|8坪|4F/7F|電梯大樓\n西屯區河南路二段259號',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://rent.591.com.tw/home/15310656'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區河南路二段259號'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入 : 詢問 想問的問題'
                         ),
                     ]
                 ),
