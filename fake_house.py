@@ -233,6 +233,26 @@ def fake_house1(event):
                         ),
                     ]
                 ),
+                CarouselColumn(
+                    thumbnail_image_url='https://img2.591.com.tw/house/2023/09/25/169564310332228103.jpg!750x588.water2.jpg',
+                    imageAspectRatio='square',
+                    title='9,300元/月',
+                    text='獨立套房|9坪|6F/6F|公寓\n西屯區西屯路二段',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://rent.591.com.tw/home/15313071'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區西屯路二段'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
             ]
         )
     )
