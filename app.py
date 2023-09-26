@@ -157,9 +157,9 @@ def Run_ChatGPT(event):
         )
         result = completion.choices[0].message.content
         message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.push_message(f'{event.source.userId}', TextSendMessage(text=message))
+        line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text=message))
     except:
-        line_bot_api.push_message(f'{event.source.userId}', TextSendMessage(text='發生錯誤!'))
+        line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text='發生錯誤!'))
 
 
 
