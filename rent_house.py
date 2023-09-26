@@ -238,8 +238,8 @@ def choose_district_Taichung(event):
                         text='可直接在對話筐輸入',
                         actions=[
                             MessageTemplateAction(
-                                label='北區',
-                                text='北區'
+                                label='ㄧ',
+                                text='ㄧ'
                             ),
                             MessageTemplateAction(
                                 label='西區',
@@ -257,6 +257,61 @@ def choose_district_Taichung(event):
         line_bot_api.reply_message(event.reply_token, message)
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
+
+def choose_house_type(event): 
+    try:
+        message = TemplateSendMessage(
+            alt_text='房子型態',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        imageAspectRatio='square',
+                        title='您要租哪種類型的房子呢？',
+                        text='也可直接在對話筐輸入',
+                        actions=[
+                            MessageTemplateAction(
+                                label='整層住家',
+                                text='整層住家'
+                            ),
+                            MessageTemplateAction(
+                                label='獨立套房',
+                                text='獨立套房'
+                            ),
+                            MessageTemplateAction(
+                                label='分租套房',
+                                text='分租套房'
+                            ),
+                        ]
+                        
+                    ),
+
+                    CarouselColumn(
+                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='您要租哪種類型的房子呢？',
+                        text='也可直接在對話筐輸入',
+                        actions=[
+                            MessageTemplateAction(
+                                label='雅房',
+                                text='雅房'
+                            ),
+                            MessageTemplateAction(
+                                label='車位',
+                                text='車位'
+                            ),
+                            MessageTemplateAction(
+                                label='其他',
+                                text='其他'
+                            )
+                        ]   
+                    ) 
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+    except :
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
+
 
 def Chat_bot_GPT(event):
     
