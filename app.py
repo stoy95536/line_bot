@@ -111,7 +111,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         fake_ask.ask_Q2(event)
 
     if event.message.text == '工作搜尋':
-        fake_ask.ask_Q1(event)
+        fake_ask.ask_Q3(event)
 
     
 

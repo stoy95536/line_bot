@@ -221,3 +221,59 @@ def ask_Q2(event):
         )
     )
     line_bot_api.reply_message(event.reply_token,message)
+
+def ask_Q3(event):
+
+    message = TemplateSendMessage(
+        alt_text='Carousel template',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q1',
+                    text='附近有哪些公司或辦公樓？',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷附近有哪些公司或辦公樓？?'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q2',
+                    text='附近是否有咖啡廳或共享工作空間？',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷附近是否有咖啡廳或共享工作空間?'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q3',
+                    text='附近是否有圖書館或研究場所？',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷附近是否有圖書館或研究場所?'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q4',
+                    text='是否有工作相關的社交活動或職業發展機會?',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷是否有工作相關的社交活動或職業發展機會?'
+                        ),
+                    ]
+                ),
+    
+            ]
+        )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
