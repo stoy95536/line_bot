@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+from flask import Flask, request, abort 
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
@@ -28,17 +28,23 @@ openai.api_key = os.environ['CHATGPT_API_KEY']
     
 @app.route("/")
 def home():
-# line_bot_api = LineBotApi('你的 access token')
-  try:
-    msg = request.args.get('msg')   # 取得網址的 msg 參數
-    if msg != None:
-      # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
-      line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text=msg))
-      return msg
-    else:
-      return 'OK'
-  except:
-    print('error')
+    global event_data
+    global search_flag
+    try:
+        if search_flag == 1:
+            event = event_data[0]
+            Run_ChatGPT(event)
+            search_flag = 0
+            
+            # msg = request.args.get('msg')   # 取得網址的 msg 參數
+            # if msg != None:
+            #     # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
+            #     line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text=msg))
+            #     return msg
+            # else:
+            #     return 'OK'
+    except:
+        print('error')
 
 
 @app.route("/callback", methods=['POST'])
@@ -56,6 +62,7 @@ def callback():
 def handle_message(event): # event.message.text 使用者輸入內容
     
     global event_data
+    event_data = []
     event_data.append(event)
      
     # user_id = event.source.userId
@@ -71,52 +78,23 @@ def handle_message(event): # event.message.text 使用者輸入內容
     #              'user_input_text':f'{event.message.text}'}
     
     
-    # usersdata_pd = pd.DataFrame(usersdata)
-    
-    
-    # usersdata_pd.to_csv('user_name.csv')
-    
     
     # message = TextSendMessage(text=f"{type(event)} \n{event.source.user_id} \n{User_name} \n{User_name.display_name} ")
     # line_bot_api.reply_message(event.reply_token, message)
     
-    if event.message.text == '幹你娘':
-        pass
-        #sendButton(event)
-        
-    if event.message.text == '測試模板':
-        pass
-        #Sendbottom_template(event)
-
     
     
     if "查詢" in event.message.text :
         global search_flag
         search_flag = 1
-        ChatGPT(event)
-        # try:
-        #     ask = event.message.text.split(" ")[1]
-            
-        #     completion = openai.ChatCompletion.create(
-        #         model="gpt-3.5-turbo",
-        #         messages=[
-        #             {"role": "user", "content": f"{ask}請用繁體字回答"}
-        #         ]
-        #         )
+        
+        try :
+            message = TextSendMessage(text=f"請稍等...小Bee正在努力查詢中...")
+            line_bot_api.reply_message(event.reply_token, message) 
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+        
 
-        #     result = completion.choices[0].message.content
-            
-        #     # User_name.display_name #使用者名稱
-        #     message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-        #     line_bot_api.reply_message(event.reply_token, message) 
-        # except:
-        #     line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
-    
-    if search_flag == 1:
-        Run_ChatGPT(event)
-        search_flag = 0
-
-    
         
     if event.message.text == '你好':
         message = TextSendMessage(text=f"你好\n時間{datetime.datetime.now()}") # bot return the Message to User
@@ -173,26 +151,11 @@ def Run_ChatGPT(event):
         )
         result = completion.choices[0].message.content
         message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.push_message(f'{event.source.userId}', TextSendMessage(text=message))
     except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))    
+        line_bot_api.push_message(f'{event.source.userId}', TextSendMessage(text='發生錯誤!'))
 
-def ChatGPT(event):
-    try:
-        Run_ChatGPT(event)
-        '''
-        t = threading.Thread(target=Run_ChatGPT, args=(event,))
-        t.start()
-            
-        # User_name.display_name #使用者名稱
-        # bot return the Message to User
-        t.join()
-        '''
-        #line_bot_api.reply_message(event.reply_token, message)
-        
-         
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
+
 
 
 def sendPizza(event):
