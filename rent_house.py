@@ -238,8 +238,8 @@ def choose_district_Taichung(event):
                         text='可直接在對話筐輸入',
                         actions=[
                             MessageTemplateAction(
-                                label='ㄧ',
-                                text='ㄧ'
+                                label='北區',
+                                text='北區'
                             ),
                             MessageTemplateAction(
                                 label='西區',
