@@ -222,6 +222,7 @@ def ask(event):
     template=ImageCarouselTemplate(
         columns=[
             ImageCarouselColumn(
+                image_url='https://ithelp.ithome.com.tw/404/bear404.jpg',
                 action=PostbackAction(
                     label='區域/交通搜尋',
                     display_text='區域/交通搜尋',
@@ -229,6 +230,7 @@ def ask(event):
                 )
             ),
             ImageCarouselColumn(
+                image_url='https://ithelp.ithome.com.tw/404/bear404.jpg',
                 action=PostbackAction(
                     label='postback2',
                     display_text='postback text2',
