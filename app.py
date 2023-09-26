@@ -92,8 +92,8 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text in ['西屯區', '北區', '東區', '南屯區', '北屯區']:
         rent_house.choose_house_type(event)
 
-    '''if event.message.text == '整層住家' or '獨立套房' or '分租套房' or '雅房' or '車位' or '其他':
-        rent_house.choose_rent(event)'''
+    if event.message.text in ['整層住家', '獨立套房', '分租套房', '雅房', '車位', '其他']:
+        rent_house.choose_rent(event)
         
 
         

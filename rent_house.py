@@ -314,7 +314,7 @@ def choose_house_type(event):
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
 
-'''        
+     
 #租金
 def choose_rent(event): 
     try:
@@ -369,7 +369,7 @@ def choose_rent(event):
         line_bot_api.reply_message(event.reply_token, message)
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))   
-'''
+
         
 def Chat_bot_GPT(event):
     
