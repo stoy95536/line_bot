@@ -103,9 +103,10 @@ def handle_message(event): # event.message.text 使用者輸入內容
 
     if event.message.text == 'test':
         fake_house.ask(event)
-        
 
-        
+    if event.message.text == '詢問西屯區青海路二段193巷':
+        pass
+
     
     # if event.message.text == '找地圖':
     #     message = TextSendMessage(text=f"請問要找哪裡呢\n時間{datetime.datetime.now()}") # bot return the Message to User

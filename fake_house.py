@@ -27,7 +27,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問西屯區青海路二段193巷'
                         ),
                     ]
                 ),
@@ -47,7 +47,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問西屯區河南路二段259號'
                         ),
                     ]
                 ),
@@ -67,7 +67,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -87,7 +87,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -107,7 +107,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -127,7 +127,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -147,7 +147,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -167,7 +167,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -187,7 +187,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -207,7 +207,7 @@ def fake_house1(event):
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='請輸入:詢問 想問的問題'
+                            text='詢問'
                         ),
                     ]
                 ),
@@ -222,7 +222,6 @@ def ask(event):
     template=ImageCarouselTemplate(
         columns=[
             ImageCarouselColumn(
-                image_url='https://ithelp.ithome.com.tw/storage/image/fight.svg',
                 action=PostbackAction(
                     label='postback1',
                     display_text='postback text1',
@@ -230,7 +229,6 @@ def ask(event):
                 )
             ),
             ImageCarouselColumn(
-                image_url='https://ithelp.ithome.com.tw/404/bear404.jpg',
                 action=PostbackAction(
                     label='postback2',
                     display_text='postback text2',
