@@ -33,16 +33,18 @@ def home():
     try:
         if search_flag == 1:
             event = event_data[0]
+            line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text=event))
             Run_ChatGPT(event)
             search_flag = 0
             
-            # msg = request.args.get('msg')   # 取得網址的 msg 參數
-            # if msg != None:
-            #     # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
-            #     line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text=msg))
-            #     return msg
-            # else:
-            #     return 'OK'
+            msg = request.args.get('msg')   # 取得網址的 msg 參數
+            if msg != None:
+                # 如果有 msg 參數，觸發 LINE Message API 的 push_message 方法
+                line_bot_api.push_message('Uce078b5f96c3f0c0e76a9f0315f5b843', TextSendMessage(text=msg))
+                return msg
+            else:
+                return 'OK'
+
     except:
         print('error')
 
