@@ -93,7 +93,7 @@ def ask_Q1(event):
                         ),
                     ]
                 ),
-                '''
+                
                 CarouselColumn(
                     #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                     title='Q2',
@@ -159,7 +159,7 @@ def ask_Q1(event):
                             text='詢問 西屯區青海路二段193巷附近有購物中心或商場嗎?'
                         )
                     ]
-                ),'''
+                ),
     
             ]
         )
