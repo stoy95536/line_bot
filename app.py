@@ -96,6 +96,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         rent_house.choose_rent(event)
 
     if event.message.text in ['5000-', '5000-10000', '10000-20000', '20000-30000', '30000-40000', '40000+']:
+        pass
         #這裡要接爬到的資料 here
         
 
