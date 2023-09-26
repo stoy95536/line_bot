@@ -39,6 +39,36 @@ def ask(event):
     )
     line_bot_api.reply_message(event.reply_token,message)
 
+
+def sask(event):
+    try:
+        message = TemplateSendMessage(
+            alt_text = '按鈕樣板',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
+                title='詢問該房屋資訊',
+                text='請選擇：',
+                actions=[
+                    MessageTemplateAction(
+                        label='區域交通搜尋',
+                        text='區域交通搜尋'
+                    ),
+                    MessageTemplateAction(
+                        label='吃飯搜尋',
+                        text='吃飯搜尋'
+                    ),
+                    MessageTemplateAction(
+                        label='工作搜尋',
+                        text='工作搜尋'
+                    ),
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))     
+
+
 def ask_Q1(event):
 
     message = TemplateSendMessage(
