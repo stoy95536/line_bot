@@ -146,3 +146,54 @@ def fake_house(event):
         line_bot_api.reply_message(event.reply_token, message)
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+def fake_house1(event):
+
+    message = TemplateSendMessage(
+        alt_text='Carousel template',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url='https://img1.591.com.tw/house/2023/09/03/169371681244317506.jpg!fit.1000x.water2.jpg',
+                    imageAspectRatio='square',
+                    title='9,999元/月',
+                    text='獨立套房|8坪|6F/8F|透天厝\n西屯區青海路二段193巷',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://rent.591.com.tw/home/15182030'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區青海路二段193巷'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
+                    imageAspectRatio='square',
+                    title='6,500元/月',
+                    text='獨立套房|8坪|6F/12F|電梯大樓\n西屯區河南路二段259號',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://rent.591.com.tw/home/15226936'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區河南路二段259號'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                ]
+                )
+            ]
+        )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
