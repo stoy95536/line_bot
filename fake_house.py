@@ -222,7 +222,7 @@ def ask(event):
     template=ImageCarouselTemplate(
         columns=[
             ImageCarouselColumn(
-                image_url='',
+                image_url='https://i03piccdn.sogoucdn.com/ab1afd2701878c6e',
                 action=PostbackAction(
                     label='區域/交通搜尋',
                     display_text='區域/交通搜尋',
@@ -230,11 +230,19 @@ def ask(event):
                 )
             ),
             ImageCarouselColumn(
-                image_url='',
+                image_url='https://i03piccdn.sogoucdn.com/ab1afd2701878c6e',
                 action=PostbackAction(
-                    label='postback2',
-                    display_text='postback text2',
-                    data='action=buy&itemid=2'
+                    label='吃飯搜尋',
+                    display_text='吃飯搜尋',
+                    data='吃飯搜尋'
+                )
+            ),
+            ImageCarouselColumn(
+                image_url='https://i03piccdn.sogoucdn.com/ab1afd2701878c6e',
+                action=PostbackAction(
+                    label='工作搜尋',
+                    display_text='工作搜尋',
+                    data='工作搜尋'
                 )
             )
         ]
