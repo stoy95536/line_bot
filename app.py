@@ -105,7 +105,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         fake_ask.ask(event)
 
     if event.message.text == '區域/交通搜尋':
-        fake_ask.ask_Q1(event)
+        fake_ask.test(event)
 
     if event.message.text == '吃飯搜尋':
         fake_ask.ask_Q1(event)

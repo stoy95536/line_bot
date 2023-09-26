@@ -225,3 +225,57 @@ def ask_Q2(event):
         )
     )
     line_bot_api.reply_message(event.reply_token,message)
+
+def test(event): 
+    try:
+        message = TemplateSendMessage(
+            alt_text='台中行政區',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        #thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        imageAspectRatio='square',
+                        title='90%的人都點擊了以下區域',
+                        text='西屯區、北屯區、南屯區',
+                        actions=[
+                            MessageTemplateAction(
+                                label='西屯區',
+                                text='西屯區'
+                            ),
+                            MessageTemplateAction(
+                                label='北屯區',
+                                text='北屯區'
+                            ),
+                            MessageTemplateAction(
+                                label='南屯區',
+                                text='南屯區'
+                            ),
+                        ]
+                        
+                    ),
+
+                    CarouselColumn(
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='若所選行政區不在選項中',
+                        text='可直接在對話筐輸入',
+                        actions=[
+                            MessageTemplateAction(
+                                label='北區',
+                                text='北區'
+                            ),
+                            MessageTemplateAction(
+                                label='西區',
+                                text='西區'
+                            ),
+                            MessageTemplateAction(
+                                label='東區',
+                                text='東區'
+                            )
+                        ]   
+                    ) 
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+    except :
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
