@@ -13,9 +13,9 @@ def ask(event):
             ImageCarouselColumn(
                 image_url='https://i03piccdn.sogoucdn.com/ab1afd2701878c6e',
                 action=PostbackAction(
-                    label='區域/交通搜尋',
-                    display_text='區域/交通搜尋',
-                    data='區域/交通搜尋'
+                    label='區域交通搜尋',
+                    display_text='區域交通搜尋',
+                    data='區域交通搜尋'
                 )
             ),
             ImageCarouselColumn(
