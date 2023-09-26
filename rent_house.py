@@ -49,7 +49,7 @@ def choose_City_six(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        #thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
                         imageAspectRatio='square',
                         title='台北市、新北市、桃園市',
                         text='也可直接在對話筐輸入縣市',
@@ -71,7 +71,7 @@ def choose_City_six(event):
                     ),
 
                     CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                         title='台中市、台南市、高雄市',
                         text='也可直接在對話筐輸入縣市',
                         actions=[
@@ -211,7 +211,7 @@ def choose_district_Taichung(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        #thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
                         imageAspectRatio='square',
                         title='90%的人都點擊了以下區域',
                         text='西屯區、北屯區、南屯區',
@@ -233,7 +233,7 @@ def choose_district_Taichung(event):
                     ),
 
                     CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                         title='若所選行政區不在選項中',
                         text='可直接在對話筐輸入',
                         actions=[
@@ -258,6 +258,7 @@ def choose_district_Taichung(event):
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
 
+#租屋型態
 def choose_house_type(event): 
     try:
         message = TemplateSendMessage(
@@ -265,8 +266,8 @@ def choose_house_type(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
-                        imageAspectRatio='square',
+                        #thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        #imageAspectRatio='square',
                         title='您要租哪種類型的房子呢？',
                         text='也可直接在對話筐輸入',
                         actions=[
@@ -287,7 +288,7 @@ def choose_house_type(event):
                     ),
 
                     CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                         title='您要租哪種類型的房子呢？',
                         text='也可直接在對話筐輸入',
                         actions=[
@@ -312,6 +313,60 @@ def choose_house_type(event):
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))        
 
+#租金
+def choose_rent(event): 
+    try:
+        message = TemplateSendMessage(
+            alt_text='租金選擇',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        #thumbnail_image_url='https://img1.591.com.tw/house/2023/09/08/169414163003871703.jpg!510x400.jpg',
+                        #imageAspectRatio='square',
+                        title='請選擇價格',
+                        text=':D',
+                        actions=[
+                            MessageTemplateAction(
+                                label='5000-',
+                                text='5000-'
+                            ),
+                            MessageTemplateAction(
+                                label='5000-10000',
+                                text='5000-10000'
+                            ),
+                            MessageTemplateAction(
+                                label='10000-20000',
+                                text='10000-20000'
+                            ),
+                        ]
+                        
+                    ),
+
+                    CarouselColumn(
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='請選擇價格',
+                        text=':D',
+                        actions=[
+                            MessageTemplateAction(
+                                label='20000-30000',
+                                text='20000-30000'
+                            ),
+                            MessageTemplateAction(
+                                label='30000-40000',
+                                text='30000-40000'
+                            ),
+                            MessageTemplateAction(
+                                label='40000+',
+                                text='40000+'
+                            )
+                        ]   
+                    ) 
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+    except :
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))   
 
 def Chat_bot_GPT(event):
     
