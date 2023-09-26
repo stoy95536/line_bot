@@ -218,14 +218,7 @@ def Chat_bot_GPT(event):
                         label='範例',
                         text='查詢 逢甲大學附近有什麼好吃的'
                     ),
-                    MessageTemplateAction(
-                        label='非六都',
-                        text='非六都'
-                    ),
-                    MessageTemplateAction(
-                        label='離島',
-                        text='離島'
-                    )
+
                 ]
             )
         )
