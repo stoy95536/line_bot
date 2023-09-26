@@ -54,8 +54,17 @@ def ask_Q1(event):
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近有學校或教育機構嗎?'
                         ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='詢問 西屯區青海路二段193巷附近有學校或教育機構嗎?'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='詢問 西屯區青海路二段193巷附近有學校或教育機構嗎?'
+                        ),
                     ]
                 ),
+                '''
                 CarouselColumn(
                     #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                     title='Q2',
@@ -64,7 +73,7 @@ def ask_Q1(event):
                         MessageTemplateAction(
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近的公共交通工具方便嗎?'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -75,7 +84,7 @@ def ask_Q1(event):
                         MessageTemplateAction(
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近有公園或是娛樂設施嗎?'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -86,7 +95,7 @@ def ask_Q1(event):
                         MessageTemplateAction(
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近有運動地點或是健身中心嗎?'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -97,7 +106,7 @@ def ask_Q1(event):
                         MessageTemplateAction(
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近是否有停車場或停車位?'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -108,7 +117,7 @@ def ask_Q1(event):
                         MessageTemplateAction(
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近是否有醫院?'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -119,9 +128,9 @@ def ask_Q1(event):
                         MessageTemplateAction(
                             label='詢問',
                             text='詢問 西屯區青海路二段193巷附近有購物中心或商場嗎?'
-                        ),
+                        )
                     ]
-                ),
+                ),'''
     
             ]
         )
