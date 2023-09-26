@@ -146,19 +146,19 @@ def fake_house(event):
                         ]
                         
                     ),
-                                        CarouselColumn(
+                    CarouselColumn(
                         thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
-                        title='好屋台中市-西屯區_西屯區逢甲商圈台水台電~',
-                        text='.',
+                        title='6,799元/月',
+                        text='⭐電梯美屋⭐投幣洗衣⭐獨立曬衣⭐時尚裝潢⭐秒殺速洽',
                         actions=[
                             URIAction(
                                 label='更多資訊',
-                                uri='https://rent.591.com.tw/home/15226936'
+                                uri='https://www.rakuya.com.tw/rent_item/info?ehid=0b5152236827315'
                             ), 
                             MessageTemplateAction(
                                 label='地理位置',
-                                text='找地圖 西屯區河南路二段259號'
+                                text='找地圖 西屯區河南路二段259號台中市西屯區烈美街'
                             ),
                             MessageTemplateAction(
                                 label='詢問',
@@ -167,15 +167,15 @@ def fake_house(event):
                         ]
                         
                     ),
-                                        CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
+                    CarouselColumn(
+                        thumbnail_image_url='https://static.rakuya.com.tw/r1/n326/9b/1a/23670326_1_b.jpeg?1695633062',
                         imageAspectRatio='square',
-                        title='好屋台中市-西屯區_西屯區逢甲商圈台水台電~',
-                        text='.',
+                        title='5,499月/元',
+                        text='溫暖你心❤️絕美採光❤️可貓貓❤️近逢甲',
                         actions=[
                             URIAction(
                                 label='更多資訊',
-                                uri='https://rent.591.com.tw/home/15226936'
+                                uri='https://www.rakuya.com.tw/rent_item/info?ehid=0753da236703268'
                             ), 
                             MessageTemplateAction(
                                 label='地理位置',
