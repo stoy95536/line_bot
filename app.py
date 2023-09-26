@@ -89,7 +89,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text == '台中市':
         rent_house.choose_district_Taichung(event)
 
-    if event.message.text == '西屯區'  or '北區' or '東區' or '南屯區' or '北屯區':
+    if event.message.text in ['西屯區', '北區', '東區', '南屯區', '北屯區']:
         rent_house.choose_house_type(event)
 
     '''if event.message.text == '整層住家' or '獨立套房' or '分租套房' or '雅房' or '車位' or '其他':
