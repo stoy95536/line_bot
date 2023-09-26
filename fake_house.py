@@ -70,7 +70,7 @@ def fake_house(event):
                         actions=[
                             URIAction(
                                 label='更多資訊',
-                                uri='https://rent.591.com.tw/home/15226936'
+                                uri='https://rent.591.com.tw/home/15309639'
                             ), 
                             MessageTemplateAction(
                                 label='地理位置',
@@ -83,19 +83,19 @@ def fake_house(event):
                         ]
                         
                     ),
-                                        CarouselColumn(
-                        thumbnail_image_url='https://img2.591.com.tw/house/2023/09/18/169501899725655103.jpg!750x588.water2.jpg',
+                    CarouselColumn(
+                        thumbnail_image_url='https://img2.591.com.tw/house/2018/10/30/154085826271038606.jpg!750x588.water2.jpg',
                         imageAspectRatio='square',
-                        title='好屋台中市-西屯區_西屯區逢甲商圈台水台電~',
-                        text='.',
+                        title='9,300元/月',
+                        text='近sogo永豐棧全新裝潢陽台獨洗',
                         actions=[
                             URIAction(
                                 label='更多資訊',
-                                uri='https://rent.591.com.tw/home/15226936'
+                                uri='https://rent.591.com.tw/home/12831413'
                             ), 
                             MessageTemplateAction(
                                 label='地理位置',
-                                text='找地圖 西屯區河南路二段259號'
+                                text='找地圖 西屯區重慶路'
                             ),
                             MessageTemplateAction(
                                 label='詢問',
