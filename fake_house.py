@@ -294,7 +294,7 @@ def fake_house1(event):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n731/0b/23/23682731_1_b.jpeg?1695731056',
+                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n769/91/f0/23682769_1_b.jpeg?1695732330',
                     imageAspectRatio='square',
                     title='7,699元/月',
                     text='獨立套房|13坪|2樓/4樓|透天厝\n台中市西屯區四川路',
@@ -306,6 +306,26 @@ def fake_house1(event):
                         MessageTemplateAction(
                             label='地理位置',
                             text='找地圖 台中市西屯區四川路'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://static.rakuya.com.tw/r1/n419/02/8a/23673419_1_b.jpeg?1695660603',
+                    imageAspectRatio='square',
+                    title='5,499元/月',
+                    text='獨立套房|10坪|5樓/6樓|透天厝\n台中市西屯區西安街',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://www.rakuya.com.tw/rent_item/info?ehid=0f8e9123673419e'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 台中市西屯區西安街'
                         ),
                         MessageTemplateAction(
                             label='詢問',
