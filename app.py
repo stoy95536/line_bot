@@ -100,6 +100,9 @@ def handle_message(event): # event.message.text 使用者輸入內容
         #這裡要接爬到的資料 here
     if event.message.text == '5000-10000':
         fake_house.fake_house1(event)
+
+    if event.message.text == 'test':
+        fake_house.ask(event)
         
 
         
