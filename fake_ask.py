@@ -4,7 +4,7 @@ import os
 
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
-
+'''
 def ask(event):
     message = TemplateSendMessage(
     alt_text='ImageCarousel template',
@@ -38,14 +38,13 @@ def ask(event):
     )
     )
     line_bot_api.reply_message(event.reply_token,message)
+'''
 
-
-def sask(event):
+def ask(event):
     try:
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
             template = ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/pRdaAmS.jpg',
                 title='詢問該房屋資訊',
                 text='請選擇：',
                 actions=[
