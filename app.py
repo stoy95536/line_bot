@@ -99,7 +99,8 @@ def handle_message(event): # event.message.text 使用者輸入內容
         #pass
         #這裡要接爬到的資料 here
     if event.message.text == '5000-10000':
-        fake_house.fake_house(event)
+        #fake_house.fake_house(event)
+        line_bot_api.reply_message(event.reply_token, 'test')
         
 
         
