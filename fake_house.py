@@ -274,18 +274,18 @@ def fake_house1(event):
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n912/d4/98/23682912_1_b.jpeg?1695735092',
+                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n731/0b/23/23682731_1_b.jpeg?1695731056',
                     imageAspectRatio='square',
-                    title='6,999元/月',
-                    text='獨立套房|13坪|1樓/2樓|透天厝\n台中市西屯區西屯路二段惠北巷',
+                    title='6,799元/月',
+                    text='獨立套房|12坪|4樓/7樓|電梯大廈\n台中市西屯區烈美街',
                     actions=[
                         URIAction(
                             label='更多資訊',
-                            uri='https://www.rakuya.com.tw/rent_item/info?ehid=0162a523682912a'
+                            uri='https://www.rakuya.com.tw/rent_item/info?ehid=0b5152236827315'
                         ), 
                         MessageTemplateAction(
                             label='地理位置',
-                            text='找地圖 台中市西屯區西屯路二段惠北巷'
+                            text='找地圖 台中市西屯區烈美街'
                         ),
                         MessageTemplateAction(
                             label='詢問',
