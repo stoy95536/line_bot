@@ -75,7 +75,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     User_name = line_bot_api.get_profile(event.source.user_id)
     
-    line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text='7414'))
+    # line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text='7414'))
     
 
 
@@ -91,12 +91,10 @@ def handle_message(event): # event.message.text 使用者輸入內容
     
     
     if "查詢" in event.message.text :
-        global search_flag
-        search_flag = 1
+        line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text='請稍等...小Bee正在努力查詢中...'))
         
         try :
-            message = TextSendMessage(text=f"請稍等...小Bee正在努力查詢中...")
-            line_bot_api.reply_message(event.reply_token, message) 
+            Run_ChatGPT(event)
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
         
@@ -157,9 +155,9 @@ def Run_ChatGPT(event):
         )
         result = completion.choices[0].message.content
         message = TextSendMessage(text=f"{result}\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text=message))
+        line_bot_api.reply_message(event.reply_token, message)
     except:
-        line_bot_api.push_message(f'{event.source.user_id}', TextSendMessage(text='發生錯誤!'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤!'))
 
 
 
