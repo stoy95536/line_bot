@@ -333,6 +333,26 @@ def fake_house1(event):
                         ),
                     ]
                 ),
+                CarouselColumn(
+                    thumbnail_image_url='https://static.rakuya.com.tw/r2/n521/bd/11/23662521_1_b.jpeg?1695541579',
+                    imageAspectRatio='square',
+                    title='6,499元/月',
+                    text='獨立套房|11坪|4樓/5樓|透天厝\n台中市西屯區河南路二段',
+                    actions=[
+                        URIAction(
+                            label='更多資訊',
+                            uri='https://www.rakuya.com.tw/rent_item/info?ehid=0ae9a123662521e'
+                        ), 
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 台中市西屯區河南路二段'
+                        ),
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='請輸入:詢問 想問的問題'
+                        ),
+                    ]
+                ),
             ]
         )
     )
