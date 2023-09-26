@@ -120,7 +120,7 @@ def fake_house(event):
                         
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://static.rakuya.com.tw/r2/n760/03/38/23682760_1_b.jpeg?1695731975',
+                        #thumbnail_image_url='https://static.rakuya.com.tw/r2/n760/03/38/23682760_1_b.jpeg?1695731975',
                         imageAspectRatio='square',
                         title='7,499元/月',
                         text='獨立套房|13坪|7樓/8樓|電梯大廈\n台中市西屯區西屯路二段',
