@@ -201,3 +201,34 @@ def choose_City_notsix(event):
         line_bot_api.reply_message(event.reply_token, message)
     except :
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+        
+
+def Chat_bot_GPT(event):
+    
+    try:
+        message = TemplateSendMessage(
+            alt_text = '按鈕樣板',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://static.vecteezy.com/system/resources/previews/018/764/128/original/chatgpt-logo-open-ai-icon-with-chatbot-artificial-intelligence-openai-chatbot-icon-chatgpt-openai-icon-artificial-intelligence-smart-ai-virtual-smart-assistant-bot-free-vector.jpg',
+                imageAspectRatio='square',
+                title='詢問機器人的格式',
+                text='查詢(空格)(你要查的東西)\n範例:查詢 逢甲大學附近有什麼好吃的',
+                actions=[
+                    MessageTemplateAction(
+                        label='範例',
+                        text='查詢 逢甲大學附近有什麼好吃的'
+                    ),
+                    MessageTemplateAction(
+                        label='非六都',
+                        text='非六都'
+                    ),
+                    MessageTemplateAction(
+                        label='離島',
+                        text='離島'
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!'))
