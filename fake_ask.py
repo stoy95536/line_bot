@@ -81,15 +81,15 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有學校或教育機構嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有學校或教育機構嗎?'
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有學校或教育機構嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有學校或教育機構嗎?'
                         ),
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有學校或教育機構嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有學校或教育機構嗎?'
                         ),
                     ]
                 ),
@@ -101,7 +101,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近的公共交通工具方便嗎?'
+                            text='查詢 西屯區青海路二段193巷附近的公共交通工具方便嗎?'
                         )
                     ]
                 ),
@@ -112,7 +112,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有公園或是娛樂設施嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有公園或是娛樂設施嗎?'
                         )
                     ]
                 ),
@@ -123,7 +123,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有運動地點或是健身中心嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有運動地點或是健身中心嗎?'
                         )
                     ]
                 ),
@@ -134,7 +134,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近是否有停車場或停車位?'
+                            text='查詢 西屯區青海路二段193巷附近是否有停車場或停車位?'
                         )
                     ]
                 ),
@@ -145,7 +145,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近是否有醫院?'
+                            text='查詢 西屯區青海路二段193巷附近是否有醫院?'
                         )
                     ]
                 ),
@@ -156,7 +156,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有購物中心或商場嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有購物中心或商場嗎?'
                         )
                     ]
                 ),
@@ -179,7 +179,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有超市或商店嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有超市或商店嗎?'
                         ),
                     ]
                 ),
@@ -190,7 +190,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近有素食或特殊飲食需求的餐廳嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有素食或特殊飲食需求的餐廳嗎?'
                         ),
                     ]
                 ),
@@ -201,7 +201,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近是否有夜市或街頭小吃?'
+                            text='查詢 西屯區青海路二段193巷附近是否有夜市或街頭小吃?'
                         ),
                     ]
                 ),
@@ -212,7 +212,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='詢問 西屯區青海路二段193巷附近附近是否有咖啡廳?'
+                            text='查詢 西屯區青海路二段193巷附近附近是否有咖啡廳?'
                         ),
                     ]
                 ),
