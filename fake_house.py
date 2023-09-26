@@ -233,26 +233,6 @@ def fake_house1(event):
                         ),
                     ]
                 ),
-                CarouselColumn(
-                    thumbnail_image_url='hhttps://img2.591.com.tw/house/2023/09/24/169554232780753206.jpg!750x588.water2.jpg',
-                    imageAspectRatio='square',
-                    title='7,000元/月',
-                    text='獨立套房|8坪|4F/7F|電梯大樓\n西屯區河南路二段259號',
-                    actions=[
-                        URIAction(
-                            label='更多資訊',
-                            uri='https://rent.591.com.tw/home/15310656'
-                        ), 
-                        MessageTemplateAction(
-                            label='地理位置',
-                            text='找地圖 西屯區河南路二段259號'
-                        ),
-                        MessageTemplateAction(
-                            label='詢問',
-                            text='請輸入 : 詢問 想問的問題'
-                        ),
-                    ]
-                ),
             ]
         )
     )
