@@ -81,7 +81,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有學校或教育機構嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有學校或教育機構嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -93,7 +93,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近的公共交通工具方便嗎?'
+                            text='查詢 西屯區青海路二段193巷附近的公共交通工具方便嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -104,7 +104,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有公園或是娛樂設施嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有公園或是娛樂設施嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -115,7 +115,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有運動地點或是健身中心嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有運動地點或是健身中心嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -126,7 +126,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近是否有停車場或停車位?'
+                            text='查詢 西屯區青海路二段193巷附近是否有停車場或停車位?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -137,7 +137,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近是否有醫院?'
+                            text='查詢 西屯區青海路二段193巷附近是否有醫院?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -148,7 +148,7 @@ def ask_Q1(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有購物中心或商場嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有購物中心或商場嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -171,7 +171,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有超市或商店嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有超市或商店嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -182,7 +182,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有素食或特殊飲食需求的餐廳嗎?'
+                            text='查詢 西屯區青海路二段193巷附近有素食或特殊飲食需求的餐廳嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -193,7 +193,7 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近是否有夜市或街頭小吃?'
+                            text='查詢 西屯區青海路二段193巷附近是否有夜市或街頭小吃?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -204,7 +204,18 @@ def ask_Q2(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近附近是否有咖啡廳?'
+                            text='查詢 西屯區青海路二段193巷附近附近是否有咖啡廳?走路，騎車距離多遠呢?'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q5',
+                    text='附近有哪些餐廳和食品選擇?',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷附近有哪些餐廳和食品選擇?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -227,7 +238,7 @@ def ask_Q3(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近有哪些公司或辦公樓？?'
+                            text='查詢 西屯區青海路二段193巷附近有哪些公司或辦公樓?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -238,7 +249,7 @@ def ask_Q3(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近是否有咖啡廳或共享工作空間?'
+                            text='查詢 西屯區青海路二段193巷附近是否有咖啡廳或共享工作空間?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
@@ -249,18 +260,29 @@ def ask_Q3(event):
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷附近是否有圖書館或研究場所?'
+                            text='查詢 西屯區青海路二段193巷附近是否有圖書館或研究場所?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
                 CarouselColumn(
                     imageAspectRatio='square',
                     title='Q4',
-                    text='是否有工作相關的社交活動或職業發展機會?',
+                    text='附近是否有工作相關的社交活動或職業發展機會?',
                     actions=[
                         MessageTemplateAction(
                             label='詢問',
-                            text='查詢 西屯區青海路二段193巷是否有工作相關的社交活動或職業發展機會?'
+                            text='查詢 西屯區青海路二段193巷附近是否有工作相關的社交活動或職業發展機會?走路，騎車距離多遠呢?'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q5',
+                    text='需要一間辦公室/工作室空間，有推薦的地點嗎?',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷附近需要一間辦公室/工作室空間，有推薦的地點嗎?走路，騎車距離多遠呢?'
                         ),
                     ]
                 ),
