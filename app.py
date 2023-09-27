@@ -4,7 +4,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import os,datetime,openai,threading
 import pandas as pd
-import rent_house , fake_house, fake_ask, fake_remind
+import rent_house , fake_house, fake_ask, fake_remind , rent_house_notice
 
 search_flag = 0
 event_data = []
@@ -72,9 +72,11 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text=f"目前有符合您的項目喔\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
     
+    if event.message.test == "租屋須知" :
+        rent_house_notice.notices(event)
+    
     if event.message.text == "機器人聊天":
         rent_house.Chat_bot_GPT(event)
-
 
     #以下是找租屋對話框
     if event.message.text == '找租屋':
