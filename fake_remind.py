@@ -5,45 +5,34 @@ import os
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
-def remide_choose(event):
-    message = TemplateSendMessage(
-    alt_text='Confirm template',
-    template=ButtonsTemplate(
-        text='是否沿用最後一次查詢的條件？',
-        actions=[
-            MessageAction(
-                label='是',
-                text='沿用上一筆設定'
-            ),
-            MessageAction(
-                label='重新設定',
-                text='重新設定條件'
+def choose(event): 
+    try:
+        message = TemplateSendMessage(
+            alt_text = '按鈕樣板',
+            template = ButtonsTemplate(
+                thumbnail_image_url='https://a.bbkz.net/guide/images/2/2d/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%9C%96.png',
+                imageAspectRatio='square',
+                title='請問你要找哪個區域的房子呢？',
+                text='也可直接在對話筐輸入區域',
+                actions=[
+                    MessageTemplateAction(
+                        label='六都',
+                        text='六都'
+                    ),
+                    MessageTemplateAction(
+                        label='非六都',
+                        text='非六都'
+                    ),
+                    MessageTemplateAction(
+                        label='離島',
+                        text='離島'
+                    )
+                ]
             )
-        ]
-    )
-    )
-    line_bot_api.reply_message(event.reply_token,message)
-
-def test(event):
-    message = TemplateSendMessage(
-        alt_text='Confirm template',
-        template=ConfirmTemplate(
-            text='iThome鐵人2021',
-            actions=[
-                PostbackAction(
-                    label='postback',
-                    display_text='postback text',
-                    data='action=buy&itemid=1'
-                ),
-                MessageAction(
-                    label='message',
-                    text='message text'
-                )
-            ]
         )
-    )
-    line_bot_api.reply_message(event.reply_token,message)
-
+        line_bot_api.reply_message(event.reply_token,message)
+    except:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤!')) 
 
 def set_time(event):
 
