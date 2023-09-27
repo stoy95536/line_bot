@@ -13,7 +13,7 @@ def remide_choose(event):
         actions=[
             MessageAction(
                 label='是',
-                text='沿用查詢條件'
+                text='沿用上一筆設定'
             ),
             MessageAction(
                 label='重新設定',
