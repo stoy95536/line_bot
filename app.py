@@ -67,10 +67,10 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text=f"https://www.google.com/maps/search/?api=1&query={location}\n時間{datetime.datetime.now()}") # bot return the Message to User
         line_bot_api.reply_message(event.reply_token, message)
         
-    if '提醒' in event.message.text:
-        tip = event.message.text.split(" ")[1]
-        message = TextSendMessage(text=f"目前有符合您的項目喔\n時間{datetime.datetime.now()}") # bot return the Message to User
-        line_bot_api.reply_message(event.reply_token, message)
+    #if '提醒' in event.message.text:
+    #    tip = event.message.text.split(" ")[1]
+    #    message = TextSendMessage(text=f"目前有符合您的項目喔\n時間{datetime.datetime.now()}") # bot return the Message to User
+    #    line_bot_api.reply_message(event.reply_token, message)
     
     if event.message.test == "租屋小撇步" :
         rent_house_notice.notice(event)
