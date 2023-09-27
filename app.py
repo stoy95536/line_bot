@@ -119,7 +119,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         fake_ask.ask_Q3(event)
 
     if event.message.text == '重新設定條件':
-        rent_house.administrative_district(event)
+        fake_remind.choose(event)
 
     if event.message.text == '沿用上一筆設定':
         fake_remind.set_time(event)
