@@ -10,23 +10,20 @@ def choose(event):
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
             template = ButtonsTemplate(
-                thumbnail_image_url='https://a.bbkz.net/guide/images/2/2d/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%9C%96.png',
+                #thumbnail_image_url='https://a.bbkz.net/guide/images/2/2d/%E5%8F%B0%E7%81%A3%E8%A1%8C%E6%94%BF%E5%8D%80%E5%9C%96.png',
                 imageAspectRatio='square',
-                title='請問你要找哪個區域的房子呢？',
-                text='也可直接在對話筐輸入區域',
+                title='請問您是否要沿用上一筆設定呢？',
+                text='上筆設定\n台中市/西屯區/獨立套房/5000-10000',
                 actions=[
                     MessageTemplateAction(
-                        label='六都',
-                        text='六都'
+                        label='是',
+                        text='沿用設定條件'
                     ),
                     MessageTemplateAction(
-                        label='非六都',
-                        text='非六都'
+                        label='重新設定條件',
+                        text='重新設定條件'
                     ),
-                    MessageTemplateAction(
-                        label='離島',
-                        text='離島'
-                    )
+
                 ]
             )
         )
