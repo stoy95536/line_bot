@@ -19,7 +19,7 @@ def notice(event):
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6540&q=80',
+                        thumbnail_image_url='https://reurl.cc/jvReyM',
                         # imageAspectRatio='square',
                         title='台北市、新北市、桃園市',
                         text='也可直接在對話筐輸入縣市',
