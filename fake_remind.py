@@ -23,3 +23,26 @@ def remide_choose(event):
     )
     )
     line_bot_api.reply_message(event.reply_token,message)
+
+def set_time(event):
+
+    message = TemplateSendMessage(
+        alt_text='Carousel template',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='Q1',
+                    text='附近有哪些公司或辦公樓？',
+                    actions=[
+                        MessageTemplateAction(
+                            label='詢問',
+                            text='查詢 西屯區青海路二段193巷附近有哪些公司或辦公樓?走路，騎車距離多遠呢?'
+                        ),
+                    ]
+                ),
+    
+            ]
+        )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
