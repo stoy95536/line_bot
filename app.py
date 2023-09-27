@@ -129,6 +129,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
         message = TextSendMessage(text='好的~若有符合條件的物件會提醒您喔:D')
         line_bot_api.reply_message(event.reply_token, message)
         
+    
 
     
         
