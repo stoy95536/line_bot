@@ -22,7 +22,7 @@ def notice(event):
                         # thumbnail_image_url="https://www.hbtamsui.com.tw/images/ewp/23/%E7%A7%9F%E5%B1%8B%E7%B0%BD%E7%B4%84%E8%A6%81%E5%B8%B6%E4%BB%80%E9%BA%BC.jpg",
                         # imageAspectRatio='square',
                         title='租屋應該要準備什麼',
-                        text='租屋簽約時，要記得帶身份證正本、影本、工作證及錢，方便房東認明身份：\n身份證：證明自己是要租屋的本人，所提供的身份證影本。',
+                        text='租屋簽約時，要記得帶身份證正本、影本、工作證及錢，方便房東認明身份：\n身份證:證明自己是要租屋的本人，所提供的身份證影本。',
                         actions=[
                             MessageTemplateAction(
                                 label='台中市',
