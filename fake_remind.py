@@ -24,6 +24,27 @@ def remide_choose(event):
     )
     line_bot_api.reply_message(event.reply_token,message)
 
+def test(event):
+    message = TemplateSendMessage(
+        alt_text='Confirm template',
+        template=ConfirmTemplate(
+            text='iThome鐵人2021',
+            actions=[
+                PostbackAction(
+                    label='postback',
+                    display_text='postback text',
+                    data='action=buy&itemid=1'
+                ),
+                MessageAction(
+                    label='message',
+                    text='message text'
+                )
+            ]
+        )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
+
+
 def set_time(event):
 
     message = TemplateSendMessage(
