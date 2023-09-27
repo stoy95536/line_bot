@@ -118,13 +118,17 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text == '時間提醒':
         fake_remind.choose(event)
 
-    if event.message.text == '重新設定條件':
-        pass
+    #
+    #if event.message.text == '重新設定條件':
         fake_remind.choose(event)
 
     if event.message.text == '沿用設定條件':
-        pass
         fake_remind.set_time(event)
+
+    if '設定_' in event.message.text:
+        message = TextSendMessage(text='好的~若有符合條件的物件會提醒您喔:D')
+        line_bot_api.reply_message(event.reply_token, message)
+        
 
     
         
