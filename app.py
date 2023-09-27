@@ -113,8 +113,8 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text == '工作搜尋':
         fake_ask.ask_Q3(event)
 
-    if event.message.text == '提醒':
-        fake_remind.remide_choose(event)
+    if event.message.text == '時間提醒':
+        fake_remind.test(event)
 
     if event.message.text == '重新設定條件':
         rent_house.administrative_district(event)
