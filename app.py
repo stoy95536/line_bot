@@ -72,7 +72,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     #    message = TextSendMessage(text=f"目前有符合您的項目喔\n時間{datetime.datetime.now()}") # bot return the Message to User
     #    line_bot_api.reply_message(event.reply_token, message)
     
-    if event.message.test == "租屋小撇步" :
+    if event.message.test == "租屋小撇步":
         rent_house_notice.notice(event)
     
     if event.message.text == "機器人聊天":
