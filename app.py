@@ -115,7 +115,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if event.message.text == '工作搜尋':
         fake_ask.ask_Q3(event)
 
-    if event.message.text == '租屋提醒':
+    if event.message.text == '時間提醒':
         fake_remind.choose(event)
 
     if event.message.text == '重新設定條件':
