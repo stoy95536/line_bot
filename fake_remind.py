@@ -8,7 +8,7 @@ handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 def remide_choose(event):
     message = TemplateSendMessage(
     alt_text='Confirm template',
-    template=ConfirmTemplate(
+    template=ButtonsTemplate(
         text='是否沿用最後一次查詢的條件？',
         actions=[
             MessageAction(
