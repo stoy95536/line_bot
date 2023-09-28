@@ -79,25 +79,25 @@ def notices(event):
                         ]   
                     ), 
 
-                    # CarouselColumn(
-                    #     #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
-                    #     title='租屋租約公證的用意是？',
-                    #     text='公證可有效達到保存證據用途，當其中一方違約時，\n例如:惡意欠租、拒絕搬遷、不退還押金等等，可向法院聲請強制執行，而不用經過訴訟程序。',
-                    #     actions=[
-                    #         MessageTemplateAction(
-                    #             label='台中市',
-                    #             text='台中市'
-                    #         ),
-                    #         MessageTemplateAction(
-                    #             label='台南市',
-                    #             text='台南市'
-                    #         ),
-                    #         MessageTemplateAction(
-                    #             label='高雄市',
-                    #             text='高雄市'
-                    #         ),
-                    #     ]   
-                    # ), 
+                    CarouselColumn(
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='租屋租約公證的用意是？',
+                        text='公證作為保存證據用途，當其中一方違約時\n例如:惡意欠租、拒絕搬遷、不退還押金等，可向法院聲請強制執行，不用經過訴訟程序。',
+                        actions=[
+                            MessageTemplateAction(
+                                label='台中市',
+                                text='台中市'
+                            ),
+                            MessageTemplateAction(
+                                label='台南市',
+                                text='台南市'
+                            ),
+                            MessageTemplateAction(
+                                label='高雄市',
+                                text='高雄市'
+                            ),
+                        ]   
+                    ), 
                 ]
             )
         )
