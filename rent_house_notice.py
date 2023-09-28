@@ -59,25 +59,25 @@ def notice(event):
                         ]   
                     ), 
 
-                    # CarouselColumn(
-                    #     #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
-                    #     title='租客簽約時應該注意哪些事項？',
-                    #     text='對租客來說，首要條件就是要先確認房東身份，以免簽約簽錯對象白花錢。其次，在租屋前必須先確認房屋狀況、租金、解約規定與租約是否合理等等。',
-                    #     actions=[
-                    #         MessageTemplateAction(
-                    #             label='台中市',
-                    #             text='台中市'
-                    #         ),
-                    #         MessageTemplateAction(
-                    #             label='台南市',
-                    #             text='台南市'
-                    #         ),
-                    #         MessageTemplateAction(
-                    #             label='高雄市',
-                    #             text='高雄市'
-                    #         ),
-                    #     ]   
-                    # ), 
+                    CarouselColumn(
+                        #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
+                        title='租客簽約時應該注意哪些事項？',
+                        text='對租客來說，首要條件就是要先確認房東身份，以免簽約簽錯對象白花錢。其次，在租屋前必須先確認房屋狀況、租金、解約規定與租約是否合理等等。',
+                        actions=[
+                            MessageTemplateAction(
+                                label='台中市',
+                                text='台中市'
+                            ),
+                            MessageTemplateAction(
+                                label='台南市',
+                                text='台南市'
+                            ),
+                            MessageTemplateAction(
+                                label='高雄市',
+                                text='高雄市'
+                            ),
+                        ]   
+                    ), 
 
                     # CarouselColumn(
                     #     #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
