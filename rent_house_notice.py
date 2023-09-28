@@ -12,14 +12,12 @@ line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 #六都 離島 非六都選擇
-def notice(event): 
+def notices(event): 
     try:
         message = TemplateSendMessage(
-            alt_text='租屋須知',
+            alt_text='租屋小撇步',
             template=CarouselTemplate(
                 columns=[
-                    
-
                     CarouselColumn(
                         # thumbnail_image_url="https://www.hbtamsui.com.tw/images/ewp/23/%E7%A7%9F%E5%B1%8B%E7%B0%BD%E7%B4%84%E8%A6%81%E5%B8%B6%E4%BB%80%E9%BA%BC.jpg",
                         # imageAspectRatio='square',

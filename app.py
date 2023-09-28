@@ -73,7 +73,7 @@ def handle_message(event): # event.message.text 使用者輸入內容
     #    line_bot_api.reply_message(event.reply_token, message)
 
     if event.message.text == "租屋小撇步":
-        rent_house_notice.notice(event)
+        rent_house_notice.notices(event)
     
     if event.message.text == "機器人聊天":
         rent_house.Chat_bot_GPT(event)
