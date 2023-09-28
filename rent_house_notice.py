@@ -35,7 +35,7 @@ def notice(event):
                             MessageTemplateAction(
                                 label='高雄市',
                                 text='高雄市'
-                            )
+                            ),
                         ]   
                     ),
 
@@ -55,7 +55,7 @@ def notice(event):
                             MessageTemplateAction(
                                 label='高雄市',
                                 text='高雄市'
-                            )
+                            ),
                         ]   
                     ), 
 
@@ -75,7 +75,7 @@ def notice(event):
                             MessageTemplateAction(
                                 label='高雄市',
                                 text='高雄市'
-                            )
+                            ),
                         ]   
                     ), 
 
@@ -95,7 +95,7 @@ def notice(event):
                             MessageTemplateAction(
                                 label='高雄市',
                                 text='高雄市'
-                            )
+                            ),
                         ]   
                     ), 
                 ]
