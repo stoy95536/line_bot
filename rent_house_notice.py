@@ -18,6 +18,8 @@ def notice(event):
             alt_text='租屋須知',
             template=CarouselTemplate(
                 columns=[
+                    
+
                     CarouselColumn(
                         # thumbnail_image_url="https://www.hbtamsui.com.tw/images/ewp/23/%E7%A7%9F%E5%B1%8B%E7%B0%BD%E7%B4%84%E8%A6%81%E5%B8%B6%E4%BB%80%E9%BA%BC.jpg",
                         # imageAspectRatio='square',
@@ -62,7 +64,7 @@ def notice(event):
                     CarouselColumn(
                         #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                         title='租客簽約時應該注意哪些事項？',
-                        text='對租客來說，首要條件就是要先確認房東身份，以免簽約簽錯對象白花錢。其次，在租屋前必須先確認房屋狀況、租金、解約規定與租約是否合理等等。',
+                        text='對租客來說，首要條件就是要先確認房東身份，以免簽約簽錯對象白花錢。\n其次，在租屋前必須先確認房屋狀況、租金、解約規定與租約是否合理等等。',
                         actions=[
                             MessageTemplateAction(
                                 label='台中市',
@@ -82,7 +84,7 @@ def notice(event):
                     # CarouselColumn(
                     #     #thumbnail_image_url='https://img2.591.com.tw/house/2023/06/05/168596855727457664.jpg!510x400.jpg',
                     #     title='租屋租約公證的用意是？',
-                    #     text='公證可有效達到保存證據用途，當其中一方違約時，例如：惡意欠租、拒絕搬遷、不退還押金等等，可向法院聲請強制執行，而不用經過訴訟程序。',
+                    #     text='公證可有效達到保存證據用途，當其中一方違約時，\n例如：惡意欠租、拒絕搬遷、不退還押金等等，可向法院聲請強制執行，而不用經過訴訟程序。',
                     #     actions=[
                     #         MessageTemplateAction(
                     #             label='台中市',
