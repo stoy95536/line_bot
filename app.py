@@ -4,7 +4,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import *
 import os,datetime,openai,threading
 import pandas as pd
-import rent_house , fake_house, fake_ask, fake_remind , rent_house_notice
+import rent_house , fake_house, fake_ask, fake_remind , rent_house_notice, fake_compare
 
 search_flag = 0
 event_data = []
@@ -128,6 +128,12 @@ def handle_message(event): # event.message.text 使用者輸入內容
     if '設定_' in event.message.text:
         message = TextSendMessage(text='好的~若有符合條件的物件會提醒您喔:D')
         line_bot_api.reply_message(event.reply_token, message)
+
+    if event.message.text == "租屋小撇步":
+        rent_house_notice.notices(event)
+
+    if event.message.text == "租屋比價":
+        fake_compare.fake_compare(event)
         
     
 

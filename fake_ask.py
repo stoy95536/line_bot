@@ -39,8 +39,48 @@ def ask(event):
     )
     line_bot_api.reply_message(event.reply_token,message)
 '''
-
 def ask(event):
+
+    message = TemplateSendMessage(
+        alt_text='Carousel template',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='詢問該房屋資訊',
+                    text='附近有哪些公司或辦公樓？',
+                    actions=[
+                        MessageTemplateAction(
+                            label='地理位置',
+                            text='找地圖 西屯區青海路二段193巷'
+                        ),
+                        MessageTemplateAction(
+                            label='區域交通搜尋',
+                            text='區域交通搜尋'
+                        ),
+                    ]
+                ),
+                CarouselColumn(
+                    imageAspectRatio='square',
+                    title='詢問該房屋資訊',
+                    text='請選擇',
+                    actions=[
+                        MessageTemplateAction(
+                            label='吃飯搜尋',
+                            text='吃飯搜尋'
+                        ),
+                        MessageTemplateAction(
+                            label='工作搜尋',
+                            text='工作搜尋'
+                        ),
+                    ]
+                ),
+            ]
+        )
+    )
+    line_bot_api.reply_message(event.reply_token,message)
+
+def ask_old(event):
     try:
         message = TemplateSendMessage(
             alt_text = '按鈕樣板',
