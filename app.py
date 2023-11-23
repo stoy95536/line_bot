@@ -181,7 +181,7 @@ def Run_ChatGPT(event):
         ask = event.message.text.split(" ")[1]
         
         completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=[
                 {"role": "user", "content": f"{ask}請用繁體字回答"}
             ]
