@@ -137,7 +137,12 @@ def handle_message(event): # event.message.text 使用者輸入內容
             event.reply_token,
             TextSendMessage("以下是你的關注清單"))
         
-    if "比價" in event.message.text:
+    if event.message.text=="以下是你的關注清單":
+            line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage("比價"))
+    
+    if event.message.text=="比價":
         fake_compare.fake_compare(event)
 
     if event.message.text == "關注物件":
