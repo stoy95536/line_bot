@@ -137,13 +137,18 @@ def handle_message(event): # event.message.text 使用者輸入內容
             event.reply_token,
             TextSendMessage("以下是你的關注清單"))
         
-    if event.message.text == "以下是你的關注清單":
+    if "比價" in event.message.text:
         fake_compare.fake_compare(event)
 
     if event.message.text == "關注物件":
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage("已關注該物件"))
+        
+    if event.message.text == "取消關注":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage("已取消關注該物件"))
         
     
 

@@ -5,14 +5,8 @@ import os
 line_bot_api = LineBotApi(os.environ['CHANNEL_ACCESS_TOKEN'])
 handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
-def word(event):
-    line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage("以下是你的關注清單"))
-
 
 def fake_compare(event):
-    #word(event)
     message = TemplateSendMessage(
         alt_text='Carousel template',
         template=CarouselTemplate(
@@ -28,8 +22,8 @@ def fake_compare(event):
                             uri='https://rent.591.com.tw/home/15182030'
                         ), 
                         MessageTemplateAction(
-                            label='地理位置',
-                            text='找地圖 西屯區青海路二段193巷'
+                            label='取消關注',
+                            text='取消關注'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -49,8 +43,8 @@ def fake_compare(event):
                             uri='https://rent.591.com.tw/home/15226936'
                         ), 
                         MessageTemplateAction(
-                            label='地理位置',
-                            text='找地圖 西屯區河南路二段259號'
+                            label='取消關注',
+                            text='取消關注'
                         ),
                         MessageTemplateAction(
                             label='詢問',
