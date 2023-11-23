@@ -133,7 +133,17 @@ def handle_message(event): # event.message.text 使用者輸入內容
         rent_house_notice.notices(event)
 
     if event.message.text == "租屋比價":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage("以下是你的關注清單"))
+        
+    if event.message.text == "以下是你的關注清單":
         fake_compare.fake_compare(event)
+
+    if event.message.text == "關注物件":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage("已關注該物件"))
         
     
 

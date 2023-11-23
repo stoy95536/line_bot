@@ -23,7 +23,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -43,7 +43,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -63,7 +63,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -83,7 +83,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -103,7 +103,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -123,7 +123,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -143,7 +143,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -163,7 +163,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='已關注該物件'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -183,7 +183,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='川路'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',
@@ -203,7 +203,7 @@ def fake_house1(event):
                         ), 
                         MessageTemplateAction(
                             label='關注',
-                            text='安街'
+                            text='關注物件'
                         ),
                         MessageTemplateAction(
                             label='詢問',

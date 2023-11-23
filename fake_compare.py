@@ -12,7 +12,7 @@ def word(event):
 
 
 def fake_compare(event):
-    word(event)
+    #word(event)
     message = TemplateSendMessage(
         alt_text='Carousel template',
         template=CarouselTemplate(
